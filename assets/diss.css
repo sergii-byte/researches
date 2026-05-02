@@ -259,6 +259,82 @@
   font-weight: 600;
   letter-spacing: 0.01em;
 }
+
+/* Inline reference markers: [13], [13; 24] */
+.ref-link {
+  display: inline-block;
+  padding: 0 6px;
+  margin: 0 1px;
+  font-size: 0.78em;
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--accent-deep);
+  background: rgba(217, 119, 87, 0.10);
+  border: 1px solid rgba(217, 119, 87, 0.20);
+  border-radius: 999px;
+  text-decoration: none;
+  vertical-align: 0.15em;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  transition: all .12s;
+  white-space: nowrap;
+}
+.ref-link:hover {
+  background: var(--accent);
+  color: var(--btn-primary-fg);
+  border-color: var(--accent);
+}
+[data-theme="light"] .ref-link {
+  background: rgba(194, 93, 54, 0.10);
+  border-color: rgba(194, 93, 54, 0.30);
+  color: var(--accent-deep);
+}
+
+/* Bibliography numbered list */
+.diss-content .biblio-list {
+  font-family: "Lora", "Charter", Georgia, serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  counter-reset: biblio;
+}
+.diss-content .biblio-list li {
+  position: relative;
+  padding: 8px 0 8px 44px;
+  margin: 0;
+  border-bottom: 1px dashed var(--line);
+  scroll-margin-top: 90px;
+}
+.diss-content .biblio-list li::before {
+  content: attr(value) ".";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 36px;
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+.diss-content .biblio-list li:target {
+  background: rgba(217, 119, 87, 0.10);
+  margin: 0 -12px;
+  padding: 8px 12px 8px 56px;
+  border-radius: 8px;
+  animation: refHighlight 1.6s ease-out;
+}
+.diss-content .biblio-list li:target::before { left: 12px; }
+@keyframes refHighlight {
+  0%   { background: rgba(217, 119, 87, 0.35); }
+  100% { background: rgba(217, 119, 87, 0.10); }
+}
 .diss-content p em {
   color: var(--ink);
   font-style: italic;
