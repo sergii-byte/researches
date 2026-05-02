@@ -28,6 +28,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   applyFilter('all');
 
+  // Mobile hamburger menu
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const backdrop = document.getElementById('menuBackdrop');
+  function closeMenu() {
+    navLinks?.classList.remove('open');
+    backdrop?.classList.remove('open');
+  }
+  menuBtn?.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    backdrop?.classList.toggle('open');
+  });
+  backdrop?.addEventListener('click', closeMenu);
+  navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
   // Reveal on scroll
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {

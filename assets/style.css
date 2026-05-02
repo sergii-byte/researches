@@ -173,7 +173,21 @@ img { max-width: 100%; display: block; }
 .theme-toggle .icon-moon { display: block; }
 [data-theme="light"] .theme-toggle .icon-sun { display: block; }
 [data-theme="light"] .theme-toggle .icon-moon { display: none; }
-.menu-btn { display: none; background: none; border: 0; color: var(--ink); font-size: 24px; cursor: pointer; }
+.menu-btn {
+  display: none;
+  background: var(--glass);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.menu-btn svg { width: 20px; height: 20px; }
+.menu-btn:hover { border-color: var(--accent); color: var(--accent-soft); }
 
 /* ===== Hero ===== */
 .hero {
@@ -557,7 +571,39 @@ img { max-width: 100%; display: block; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .dissertation-card { grid-template-columns: 1fr; padding: 32px; gap: 30px; }
   .section { padding: 70px 0; }
-  .nav-links a:not(.lang) { display: none; }
+  /* Hamburger drawer */
+  .menu-btn { display: inline-flex; }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 340px;
+    height: 100vh;
+    background: var(--bg-1);
+    border-left: 1px solid var(--line-strong);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 28px 32px;
+    gap: 8px;
+    transition: right .25s ease;
+    z-index: 60;
+    box-shadow: -20px 0 40px -20px rgba(0,0,0,0.4);
+  }
+  .nav-links.open { right: 0; }
+  .nav-links a {
+    display: block;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .nav-links a.lang { text-align: center; margin-top: auto; }
+  .nav-links .theme-toggle { width: 100%; justify-content: flex-start; padding: 14px 16px; border-radius: 10px; font-size: 15px; }
+  /* Backdrop when menu open */
+  .menu-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 55; opacity: 0; pointer-events: none; transition: opacity .25s; }
+  .menu-backdrop.open { opacity: 1; pointer-events: auto; }
   .author-card { padding: 26px; }
   .pub-item { padding: 22px 22px 22px 22px; }
   .pub-item::before { position: static; display: block; margin-bottom: 6px; font-size: 16px; }
