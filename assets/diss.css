@@ -272,6 +272,33 @@
 .diss-content p + ul, .diss-content p + ol { margin-top: -0.4em; }
 .diss-content ul + p, .diss-content ol + p { margin-top: 0.4em; }
 
+/* Figures — chart/diagram images extracted from the docx */
+.diss-figure {
+  margin: 32px -40px 36px -40px;
+  width: calc(100% + 80px);
+  text-align: center;
+  background: var(--glass);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  padding: 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.diss-figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+}
+[data-theme="light"] .diss-figure img {
+  background: rgba(255,255,255,0.6);
+}
+@media (max-width: 980px) {
+  .diss-figure { margin: 24px -16px 28px; width: calc(100% + 32px); border-radius: 0; padding: 12px; }
+}
+
 /* Tables — span the entire content column (extend into article padding) */
 .diss-table-wrap {
   margin: 32px -40px 36px -40px;

@@ -6,6 +6,8 @@ build_diss_html.py
 extract_diss.py
 diff_text.py
 find_missing.py
+full_diff.py
+check_tables.py
 biblio.txt
 diss_raw.txt
 __pycache__/
