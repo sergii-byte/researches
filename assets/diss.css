@@ -82,13 +82,24 @@
 .toc-l2 a { padding-left: 22px; }
 .toc-l3 a { padding-left: 38px; color: var(--ink-mute); font-size: 12.5px; }
 
-/* Content — optimised for long-form reading */
+/* Content — full grid-column width; reading column constrained per-element */
 .diss-content {
   padding: 56px 80px 140px;
-  max-width: 760px;
-  margin: 0 auto;
+  max-width: 100%;
   color: var(--ink);
   font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+}
+/* Constrain text-bearing elements to a comfortable reading column */
+.diss-content > .diss-hdr,
+.diss-content > h1,
+.diss-content > h2,
+.diss-content > h3,
+.diss-content > p,
+.diss-content > ul,
+.diss-content > ol {
+  max-width: 760px;
+  margin-left: 0;
+  margin-right: auto;
 }
 .diss-hdr {
   border-bottom: 1px solid var(--line);
@@ -261,15 +272,11 @@
 .diss-content p + ul, .diss-content p + ol { margin-top: -0.4em; }
 .diss-content ul + p, .diss-content ol + p { margin-top: 0.4em; }
 
-/* Tables — span beyond the reading column so they don't need horizontal scroll */
+/* Tables — span the entire content column (extend into article padding) */
 .diss-table-wrap {
-  margin: 32px calc(-50vw + 50%) 36px;
-  width: min(96vw, 1400px);
-  margin-left: auto;
-  margin-right: auto;
-  /* Pull-out trick: extend symmetrically from the reading column */
-  margin-left: calc(50% - min(48vw, 700px));
-  margin-right: calc(50% - min(48vw, 700px));
+  margin: 32px -40px 36px -40px;
+  width: calc(100% + 80px);
+  max-width: calc(100% + 80px);
   border-radius: 10px;
   border: 1px solid var(--line-strong);
   background: var(--glass);
@@ -326,12 +333,12 @@
 /* Mobile fallback */
 @media (max-width: 980px) {
   .diss-table-wrap {
-    margin-left: -16px;
-    margin-right: -16px;
+    margin: 24px -16px 28px;
     width: calc(100% + 32px);
     overflow-x: auto;
+    border-radius: 0;
   }
-  .diss-table { font-size: 11.5px; }
+  .diss-table { font-size: 11.5px; min-width: 600px; }
   .diss-table thead th { padding: 8px 8px; font-size: 10.5px; }
   .diss-table tbody td { padding: 6px 8px; }
 }
