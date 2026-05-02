@@ -6,6 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = toc.querySelectorAll('a[href^="#"]');
   const headings = Array.from(document.querySelectorAll('.diss-content h1, .diss-content h2, .diss-content h3')).filter(h => h.id);
 
+  // TOC search
+  const search = document.getElementById('tocSearch');
+  search?.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    toc.querySelectorAll('.toc-list li').forEach(li => {
+      const text = li.textContent.toLowerCase();
+      li.classList.toggle('toc-hidden', q && !text.includes(q));
+    });
+  });
+
   toggle?.addEventListener('click', () => toc.classList.add('open'));
   close?.addEventListener('click', () => toc.classList.remove('open'));
 

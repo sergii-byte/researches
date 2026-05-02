@@ -3,6 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.tab-btn');
   const items = document.querySelectorAll('.pub-item');
 
+  // Count items per tab and update the count badge
+  tabs.forEach(t => {
+    const cat = t.dataset.tab;
+    const n = cat === 'all' ? items.length : Array.from(items).filter(i => i.dataset.cat === cat).length;
+    let badge = t.querySelector('.count');
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.className = 'count';
+      t.appendChild(badge);
+    }
+    badge.textContent = n;
+  });
+
   function applyFilter(cat) {
     items.forEach(it => {
       const match = cat === 'all' || it.dataset.cat === cat;
