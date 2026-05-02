@@ -12,6 +12,7 @@
   --gold: #d4a574;
   --line: rgba(244, 236, 223, 0.08);
   --line-strong: rgba(244, 236, 223, 0.16);
+  --table-border: rgba(244, 236, 223, 0.28);
   --glass: rgba(29, 24, 20, 0.55);
   --glass-strong: rgba(29, 24, 20, 0.75);
   --grain-color: 1 1 1;     /* white grain on dark */
@@ -42,6 +43,7 @@
   --gold: #a87c47;
   --line: rgba(42, 31, 21, 0.10);
   --line-strong: rgba(42, 31, 21, 0.20);
+  --table-border: rgba(42, 31, 21, 0.32);
   --glass: rgba(255, 250, 240, 0.55);
   --glass-strong: rgba(255, 250, 240, 0.78);
   --grain-color: 0 0 0;
