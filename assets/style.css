@@ -71,7 +71,7 @@ body {
   background-color: var(--bg-0);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip avoids creating a scroll container that breaks anchor jumps */
   transition: background-color .3s, color .3s;
 }
 

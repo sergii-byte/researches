@@ -209,7 +209,7 @@
   font-weight: 600;
   letter-spacing: -0.3px;
   color: var(--ink);
-  scroll-margin-top: 90px;
+  scroll-margin-top: 100px;
 }
 .diss-content h1 {
   font-size: clamp(28px, 3.4vw, 36px);

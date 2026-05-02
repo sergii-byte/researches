@@ -1,3 +1,28 @@
+// Reliable same-page anchor navigation (explicit scrollTo instead of relying on
+// the browser's hash-jump, which can fail when body has overflow-x set).
+function navScrollToHash(hash) {
+  if (!hash || hash === '#') return;
+  const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 90;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  const href = a.getAttribute('href');
+  if (!href || href === '#') return;
+  const id = href.slice(1);
+  if (!document.getElementById(id)) return;
+  e.preventDefault();
+  history.pushState(null, '', href);
+  navScrollToHash(href);
+});
+window.addEventListener('popstate', () => navScrollToHash(location.hash));
+document.addEventListener('DOMContentLoaded', () => {
+  if (location.hash) requestAnimationFrame(() => navScrollToHash(location.hash));
+});
+
 // Tab filter
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.tab-btn');

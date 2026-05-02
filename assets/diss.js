@@ -6,6 +6,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = toc.querySelectorAll('a[href^="#"]');
   const headings = Array.from(document.querySelectorAll('.diss-content h1, .diss-content h2, .diss-content h3')).filter(h => h.id);
 
+  // Robust same-page anchor navigation: explicitly scroll the target into view.
+  // Fixes cases where the browser's default hash-jump silently fails because the
+  // body had overflow-x and an alternate scroll context, or sticky headers
+  // confuse position calculation.
+  function scrollToHash(hash) {
+    if (!hash || hash === '#') return;
+    const id = decodeURIComponent(hash.slice(1));
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 90;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    const id = href.slice(1);
+    if (!document.getElementById(id)) return;
+    e.preventDefault();
+    history.pushState(null, '', href);
+    scrollToHash(href);
+    if (window.innerWidth <= 980) toc.classList.remove('open');
+  });
+  // Handle direct deep-links (page loaded with #hash) and back/forward navigation.
+  if (location.hash) requestAnimationFrame(() => scrollToHash(location.hash));
+  window.addEventListener('popstate', () => scrollToHash(location.hash));
+
   // TOC search
   const search = document.getElementById('tocSearch');
   search?.addEventListener('input', () => {
