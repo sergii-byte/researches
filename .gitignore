@@ -1,0 +1,10 @@
+# Local Claude Code config
+.claude/
+
+# Python build scripts and artifacts
+build_diss_html.py
+extract_diss.py
+biblio.txt
+diss_raw.txt
+__pycache__/
+*.pyc
