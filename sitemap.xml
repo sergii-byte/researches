@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://barinovphd.netlify.app/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinovphd.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinovphd.netlify.app/en/"/>
+  </url>
+  <url>
+    <loc>https://barinovphd.netlify.app/dissertation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinovphd.netlify.app/dissertation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinovphd.netlify.app/en/dissertation/"/>
+  </url>
+  <url>
+    <loc>https://barinovphd.netlify.app/glossary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinovphd.netlify.app/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinovphd.netlify.app/en/glossary/"/>
+  </url>
+  <url>
+    <loc>https://barinovphd.netlify.app/en/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://barinovphd.netlify.app/en/dissertation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://barinovphd.netlify.app/en/glossary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

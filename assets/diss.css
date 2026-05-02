@@ -72,6 +72,34 @@
 .toc-search:focus { border-color: var(--accent); }
 .toc-search::placeholder { color: var(--ink-mute); }
 .toc-list li.toc-hidden { display: none; }
+.toc-mins {
+  float: right;
+  font-size: 11px;
+  color: var(--ink-mute);
+  font-weight: 400;
+  font-family: var(--sans);
+  background: rgba(217, 119, 87, 0.08);
+  padding: 2px 7px;
+  border-radius: 999px;
+  margin-left: 8px;
+  letter-spacing: 0.02em;
+}
+.toc-pdf {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 6px 0;
+  padding: 10px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--glass);
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-family: var(--sans);
+  text-decoration: none;
+  transition: all .15s;
+}
+.toc-pdf:hover { border-color: var(--accent); color: var(--accent-soft); }
 .toc-eyebrow {
   font-size: 11px;
   letter-spacing: 0.3em;
@@ -324,13 +352,14 @@
   height: auto;
   display: block;
   margin: 0 auto;
-  border-radius: 6px;
-  border: 1px solid var(--line-strong);
+  border-radius: 8px;
   background: #fff;
-  padding: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08), 0 6px 18px -8px rgba(0,0,0,0.18);
 }
 [data-theme="dark"] .diss-figure img {
-  background: rgba(255, 255, 255, 0.92); /* charts have white bg in original — keep readable */
+  background: #faf7f0;
+  box-shadow: 0 0 0 1px rgba(244, 236, 223, 0.15), 0 8px 28px -10px rgba(0,0,0,0.6);
 }
 .diss-figure figcaption {
   margin-top: 14px;
