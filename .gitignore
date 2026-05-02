@@ -4,7 +4,12 @@
 # Python build scripts and artifacts
 build_diss_html.py
 extract_diss.py
+diff_text.py
+find_missing.py
 biblio.txt
 diss_raw.txt
 __pycache__/
 *.pyc
+
+# Source document (kept locally for rebuild only)
+source.docx
