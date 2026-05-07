@@ -117,6 +117,21 @@
   border-color: rgba(217, 119, 87, 0.4);
   transform: translateY(-1px);
 }
+.gloss-item {
+  scroll-margin-top: 120px;
+}
+.gloss-item:target,
+.gloss-item.is-target {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+  background: rgba(217, 119, 87, 0.10);
+  animation: glossFlash 2.2s ease-out;
+}
+@keyframes glossFlash {
+  0%   { background: rgba(217, 119, 87, 0.30); }
+  100% { background: rgba(217, 119, 87, 0.10); }
+}
 .gloss-item dt {
   font-family: var(--serif);
   font-size: 22px;

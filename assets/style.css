@@ -323,7 +323,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===== Section ===== */
-.section { padding: 90px 0; position: relative; }
+.section { padding: 90px 0; position: relative; scroll-margin-top: 80px; }
 .section-head {
   display: flex;
   align-items: baseline;

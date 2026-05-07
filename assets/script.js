@@ -4,10 +4,14 @@ function navScrollToHash(hash, behavior) {
   if (!hash || hash === '#') return;
   const el = document.getElementById(decodeURIComponent(hash.slice(1)));
   if (!el) return;
-  const targetY = el.getBoundingClientRect().top + window.scrollY - 90;
-  const distance = Math.abs(targetY - window.scrollY);
+  const distance = Math.abs(el.getBoundingClientRect().top + window.scrollY - window.scrollY);
   const mode = behavior || (distance > 4000 ? 'instant' : 'smooth');
-  window.scrollTo({ top: targetY, behavior: mode });
+  // scrollIntoView is more reliable than window.scrollTo across edge cases
+  // (overflow:clip, sticky containers, iframe contexts).
+  el.scrollIntoView({ behavior: mode, block: 'start' });
+  document.querySelectorAll('.is-target').forEach(n => n.classList.remove('is-target'));
+  el.classList.add('is-target');
+  setTimeout(() => el.classList.remove('is-target'), 2200);
 }
 document.addEventListener('click', (e) => {
   const a = e.target.closest('a[href^="#"]');
