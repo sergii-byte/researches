@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!el) return;
     const top = el.getBoundingClientRect().top + window.scrollY - 90;
     window.scrollTo({ top, behavior: 'smooth' });
+    // Visual cue: pushState navigation doesn't trigger :target — flash a highlight class
+    document.querySelectorAll('.is-target').forEach(n => n.classList.remove('is-target'));
+    el.classList.add('is-target');
+    setTimeout(() => el.classList.remove('is-target'), 2200);
   }
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a[href^="#"]');
