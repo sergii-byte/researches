@@ -10,14 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fixes cases where the browser's default hash-jump silently fails because the
   // body had overflow-x and an alternate scroll context, or sticky headers
   // confuse position calculation.
-  function scrollToHash(hash) {
+  function scrollToHash(hash, behavior) {
     if (!hash || hash === '#') return;
     const id = decodeURIComponent(hash.slice(1));
     const el = document.getElementById(id);
     if (!el) return;
     const top = el.getBoundingClientRect().top + window.scrollY - 90;
-    window.scrollTo({ top, behavior: 'smooth' });
-    // Visual cue: pushState navigation doesn't trigger :target — flash a highlight class
+    window.scrollTo({ top, behavior: behavior || 'smooth' });
     document.querySelectorAll('.is-target').forEach(n => n.classList.remove('is-target'));
     el.classList.add('is-target');
     setTimeout(() => el.classList.remove('is-target'), 2200);
@@ -35,8 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth <= 980) toc.classList.remove('open');
   });
   // Handle direct deep-links (page loaded with #hash) and back/forward navigation.
-  if (location.hash) requestAnimationFrame(() => scrollToHash(location.hash));
-  window.addEventListener('popstate', () => scrollToHash(location.hash));
+  // Use 'instant' for the initial jump so a long-distance scroll doesn't time out
+  // before the smooth animation reaches the target.
+  if (location.hash) {
+    // Wait until images and layout are settled
+    setTimeout(() => scrollToHash(location.hash, 'instant'), 200);
+    window.addEventListener('load', () => scrollToHash(location.hash, 'instant'));
+  }
+  window.addEventListener('popstate', () => scrollToHash(location.hash, 'instant'));
 
   // TOC search
   const search = document.getElementById('tocSearch');
