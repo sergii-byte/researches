@@ -15,8 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = decodeURIComponent(hash.slice(1));
     const el = document.getElementById(id);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 90;
-    window.scrollTo({ top, behavior: behavior || 'smooth' });
+    const targetY = el.getBoundingClientRect().top + window.scrollY - 90;
+    const distance = Math.abs(targetY - window.scrollY);
+    // Smooth behavior unreliably skips on long distances — use instant beyond 4000px
+    const mode = behavior || (distance > 4000 ? 'instant' : 'smooth');
+    window.scrollTo({ top: targetY, behavior: mode });
     document.querySelectorAll('.is-target').forEach(n => n.classList.remove('is-target'));
     el.classList.add('is-target');
     setTimeout(() => el.classList.remove('is-target'), 2200);

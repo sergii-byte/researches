@@ -4,8 +4,10 @@ function navScrollToHash(hash, behavior) {
   if (!hash || hash === '#') return;
   const el = document.getElementById(decodeURIComponent(hash.slice(1)));
   if (!el) return;
-  const top = el.getBoundingClientRect().top + window.scrollY - 90;
-  window.scrollTo({ top, behavior: behavior || 'smooth' });
+  const targetY = el.getBoundingClientRect().top + window.scrollY - 90;
+  const distance = Math.abs(targetY - window.scrollY);
+  const mode = behavior || (distance > 4000 ? 'instant' : 'smooth');
+  window.scrollTo({ top: targetY, behavior: mode });
 }
 document.addEventListener('click', (e) => {
   const a = e.target.closest('a[href^="#"]');
