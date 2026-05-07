@@ -585,26 +585,64 @@
   box-shadow: var(--shadow);
   cursor: pointer;
 }
-.to-top {
+/* Reading-progress ring (replaces ↑ button — clicking still scrolls to top) */
+.reading-ring {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   border-radius: 999px;
   background: var(--glass-strong);
   color: var(--ink);
   border: 1px solid var(--line-strong);
   cursor: pointer;
-  font-size: 18px;
   z-index: 60;
   backdrop-filter: blur(14px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s, background .3s, color .3s;
+  -webkit-backdrop-filter: blur(14px);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-size: 0;
+  transition: background .3s, border-color .15s, transform .15s;
+  box-shadow: 0 8px 24px -8px rgba(0,0,0,0.35);
 }
-.to-top.show { opacity: 1; pointer-events: auto; }
-.to-top:hover { color: var(--accent-soft); border-color: var(--accent); }
+.reading-ring:hover { border-color: var(--accent); transform: translateY(-1px); }
+.reading-ring svg {
+  position: absolute;
+  inset: 0;
+  width: 56px; height: 56px;
+  transform: rotate(-90deg);
+}
+.reading-ring .ring-track {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 3;
+}
+.reading-ring .ring-fill {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 150.7;   /* circumference 2*pi*r = 2*pi*24 ≈ 150.7 */
+  stroke-dashoffset: 150.7;  /* fully empty initially */
+  transition: stroke-dashoffset .15s linear;
+}
+.reading-ring .ring-pct {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: -0.02em;
+}
+.reading-ring.complete .ring-pct {
+  font-size: 18px;
+  color: var(--accent);
+}
 
 /* Print stylesheet — academic users print */
 @media print {

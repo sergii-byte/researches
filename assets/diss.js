@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const toc = document.getElementById('tocPanel');
   const toggle = document.getElementById('tocToggle');
   const close = document.getElementById('tocClose');
-  const toTop = document.getElementById('toTop');
   const links = toc.querySelectorAll('a[href^="#"]');
   const headings = Array.from(document.querySelectorAll('.diss-content h1, .diss-content h2, .diss-content h3')).filter(h => h.id);
 
@@ -86,19 +85,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
   headings.forEach(h => io.observe(h));
 
-  // Scroll-to-top + reading progress
+  // Reading progress: top bar + circular ring with %
   const progress = document.getElementById('readingProgress');
+  const ring = document.getElementById('readingRing');
+  const ringFill = ring?.querySelector('.ring-fill');
+  const ringPct = document.getElementById('ringPct');
+  const RING_CIRC = 150.7; // 2*pi*24
   function updateOnScroll() {
     const y = window.scrollY;
-    toTop.classList.toggle('show', y > 600);
-    if (progress) {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.width = max > 0 ? Math.min(100, (y / max) * 100) + '%' : '0';
-    }
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (y / max) * 100)) : 0;
+    if (progress) progress.style.width = pct + '%';
+    if (ringFill) ringFill.style.strokeDashoffset = (RING_CIRC * (1 - pct / 100)).toFixed(2);
+    if (ringPct) ringPct.textContent = Math.round(pct) + '%';
+    if (ring) ring.classList.toggle('complete', pct >= 99);
   }
   window.addEventListener('scroll', updateOnScroll, { passive: true });
+  window.addEventListener('resize', updateOnScroll);
   updateOnScroll();
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  ring?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   // Mobile hamburger menu
   const menuBtn = document.getElementById('menuBtn');

@@ -1592,7 +1592,13 @@
 
 </div>
 
-<button class="to-top" id="toTop" aria-label="Нагору">↑</button>
+<button class="reading-ring" id="readingRing" aria-label="Прогрес читання · нагору" title="Прогрес читання">
+  <svg viewBox="0 0 56 56" aria-hidden="true">
+    <circle class="ring-track" cx="28" cy="28" r="24" />
+    <circle class="ring-fill"  cx="28" cy="28" r="24" />
+  </svg>
+  <span class="ring-pct" id="ringPct">0%</span>
+</button>
 
 <script src="../assets/diss.js"></script>
 </body>
