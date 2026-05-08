@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('popstate', () => scrollToHash(location.hash, 'instant'));
 
-  // TOC search
+  // TOC search (sidebar)
   const search = document.getElementById('tocSearch');
   search?.addEventListener('input', () => {
     const q = search.value.trim().toLowerCase();
@@ -52,6 +52,77 @@ document.addEventListener('DOMContentLoaded', () => {
       li.classList.toggle('toc-hidden', q && !text.includes(q));
     });
   });
+
+  // Header search (pinned in nav) — searches headings AND paragraph content
+  const headerInput = document.getElementById('headerSearch');
+  const resultsList = document.getElementById('searchResults');
+  if (headerInput && resultsList) {
+    // Index: all headings with id, level, text, and the section's text content
+    const sectionIndex = headings.map(h => {
+      const items = [];
+      let n = h.nextElementSibling;
+      while (n && !/^H[123]$/.test(n.tagName)) {
+        items.push(n.textContent || '');
+        n = n.nextElementSibling;
+      }
+      return {
+        id: h.id,
+        level: parseInt(h.tagName[1]),
+        title: h.textContent.replace(/\d+\s*хв$/, '').trim(),
+        body: items.join(' ').toLowerCase(),
+      };
+    });
+
+    function escHtml(s) { return s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+    function highlight(text, q) {
+      if (!q) return escHtml(text);
+      const i = text.toLowerCase().indexOf(q);
+      if (i < 0) return escHtml(text);
+      return escHtml(text.slice(0, i)) + '<mark>' + escHtml(text.slice(i, i + q.length)) + '</mark>' + escHtml(text.slice(i + q.length));
+    }
+    function snippetAround(body, q, span = 60) {
+      const i = body.indexOf(q);
+      if (i < 0) return '';
+      const start = Math.max(0, i - span);
+      const end = Math.min(body.length, i + q.length + span);
+      return (start > 0 ? '…' : '') + body.slice(start, end) + (end < body.length ? '…' : '');
+    }
+
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) { resultsList.hidden = true; resultsList.innerHTML = ''; return; }
+      const hits = [];
+      for (const s of sectionIndex) {
+        const titleHit = s.title.toLowerCase().includes(q);
+        const bodyHit = s.body.includes(q);
+        if (titleHit || bodyHit) hits.push({ s, score: titleHit ? 2 : 1, snippet: bodyHit ? snippetAround(s.body, q) : '' });
+        if (hits.length >= 30) break;
+      }
+      hits.sort((a, b) => b.score - a.score);
+      if (hits.length === 0) {
+        resultsList.innerHTML = '<li class="empty">Нічого не знайдено</li>';
+      } else {
+        resultsList.innerHTML = hits.map(({s, snippet}) =>
+          `<li><a href="#${s.id}" class="level-l${s.level}">${highlight(s.title, q)}` +
+          (snippet ? `<div style="font-size:12px;color:var(--ink-mute);margin-top:3px;line-height:1.4">${highlight(snippet, q)}</div>` : '') +
+          `</a></li>`).join('');
+      }
+      resultsList.hidden = false;
+    }
+
+    headerInput.addEventListener('input', () => renderResults(headerInput.value));
+    headerInput.addEventListener('focus', () => { if (headerInput.value.trim()) resultsList.hidden = false; });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.header-search-wrap')) resultsList.hidden = true;
+    });
+    headerInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { headerInput.value = ''; resultsList.hidden = true; }
+      if (e.key === 'Enter') {
+        const first = resultsList.querySelector('a');
+        if (first) { first.click(); resultsList.hidden = true; }
+      }
+    });
+  }
 
   toggle?.addEventListener('click', () => toc.classList.add('open'));
   close?.addEventListener('click', () => toc.classList.remove('open'));
