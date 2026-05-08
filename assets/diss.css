@@ -241,6 +241,36 @@
 .toc-l3 a { padding-left: 38px; font-size: 12.5px; }
 .toc-l4 a { padding-left: 54px; font-size: 12px; color: var(--ink-mute); font-style: italic; }
 
+/* Collapsible group: h3 with h4 children (Module → Lessons) */
+.toc-list li.has-children { position: relative; }
+.toc-list li.has-children > a { padding-right: 30px; }
+.toc-expand {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px; height: 24px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink-mute);
+  cursor: pointer;
+  transition: transform .15s ease, color .15s, background .15s, border-color .15s;
+}
+.toc-expand:hover { color: var(--accent); border-color: var(--accent); background: rgba(217, 119, 87, 0.08); }
+.toc-expand svg { transition: transform .2s ease; }
+.toc-list li.expanded .toc-expand svg { transform: rotate(180deg); }
+.toc-list li.expanded .toc-expand { color: var(--accent); border-color: var(--accent); }
+
+/* Hidden child items by default (also via [hidden] attribute) */
+.toc-list li.toc-child[hidden] { display: none; }
+/* When search is active, force-show all matching items regardless of collapse */
+.toc-list.searching li.toc-child[hidden] { display: list-item; }
+
 /* Content — full grid-column width; reading column constrained per-element */
 .diss-content {
   padding: 56px 80px 140px;

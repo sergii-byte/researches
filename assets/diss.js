@@ -43,15 +43,58 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('popstate', () => scrollToHash(location.hash, 'instant'));
 
-  // TOC search (sidebar)
+  // TOC search (sidebar) — adds .searching to TOC list so collapsed children become visible too
   const search = document.getElementById('tocSearch');
+  const tocList = toc.querySelector('.toc-list');
   search?.addEventListener('input', () => {
     const q = search.value.trim().toLowerCase();
+    tocList?.classList.toggle('searching', !!q);
     toc.querySelectorAll('.toc-list li').forEach(li => {
       const text = li.textContent.toLowerCase();
       li.classList.toggle('toc-hidden', q && !text.includes(q));
     });
   });
+
+  // Collapsible TOC groups (Module → Lessons)
+  function setExpanded(parentLi, expanded) {
+    const btn = parentLi.querySelector('.toc-expand');
+    if (!btn) return;
+    btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    parentLi.classList.toggle('expanded', expanded);
+    const parentId = parentLi.querySelector('a').getAttribute('href').slice(1);
+    document.querySelectorAll(`.toc-child[data-parent="${CSS.escape(parentId)}"]`).forEach(child => {
+      if (expanded) child.removeAttribute('hidden');
+      else child.setAttribute('hidden', '');
+    });
+  }
+  document.querySelectorAll('.toc-expand').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const li = btn.closest('li');
+      const isExpanded = li.classList.contains('expanded');
+      setExpanded(li, !isExpanded);
+    });
+  });
+  // Auto-expand parent group when navigating to a child (e.g. clicking "Заняття 5" elsewhere)
+  function autoExpandParentForHash(hash) {
+    if (!hash || hash.length < 2) return;
+    const id = hash.slice(1);
+    const childLi = document.querySelector(`.toc-child a[href="#${CSS.escape(id)}"]`)?.closest('li');
+    if (!childLi) return;
+    const parentId = childLi.dataset.parent;
+    if (!parentId) return;
+    const parentA = document.querySelector(`.toc-list a[href="#${CSS.escape(parentId)}"]`);
+    const parentLi = parentA?.closest('li.has-children');
+    if (parentLi && !parentLi.classList.contains('expanded')) setExpanded(parentLi, true);
+  }
+  // Auto-expand when clicking a child link from anywhere
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (a) autoExpandParentForHash(a.getAttribute('href'));
+  }, true);
+  // Auto-expand on page load with hash
+  if (location.hash) requestAnimationFrame(() => autoExpandParentForHash(location.hash));
 
   // Header search (pinned in nav) — searches headings AND paragraph content
   const headerInput = document.getElementById('headerSearch');
