@@ -238,7 +238,8 @@
 }
 .toc-l1 a { font-weight: 600; color: var(--ink); font-family: var(--serif); font-size: 15px; letter-spacing: 0.2px; }
 .toc-l2 a { padding-left: 22px; }
-.toc-l3 a { padding-left: 38px; color: var(--ink-mute); font-size: 12.5px; }
+.toc-l3 a { padding-left: 38px; font-size: 12.5px; }
+.toc-l4 a { padding-left: 54px; font-size: 12px; color: var(--ink-mute); font-style: italic; }
 
 /* Content — full grid-column width; reading column constrained per-element */
 .diss-content {
@@ -293,7 +294,7 @@
   line-height: 1.6;
 }
 
-.diss-content h1, .diss-content h2, .diss-content h3 {
+.diss-content h1, .diss-content h2, .diss-content h3, .diss-content h4 {
   font-family: var(--serif);
   font-weight: 600;
   letter-spacing: -0.3px;
@@ -330,6 +331,18 @@
   font-weight: 500;
   font-style: italic;
   line-height: 1.3;
+}
+.diss-content h4 {
+  font-size: 17px;
+  margin: 32px 0 14px;
+  color: var(--accent-deep);
+  font-weight: 600;
+  font-style: normal;
+  font-family: var(--sans);
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent);
 }
 
 /* Paragraphs — Lora is more readable for body Cyrillic than Cormorant */
