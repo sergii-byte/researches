@@ -309,6 +309,25 @@
   border-bottom-color: var(--accent);
   background: rgba(217, 119, 87, 0.08);
 }
+/* Programme principles — extra-prominent variant of gloss-link */
+.diss-content .gloss-link[href*="g-principle-"] {
+  font-weight: 600;
+  color: var(--accent-deep);
+  border-bottom: none;
+  background: rgba(217, 119, 87, 0.10);
+  padding: 1px 8px;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+  margin-left: -2px;
+}
+.diss-content .gloss-link[href*="g-principle-"]:hover {
+  background: var(--accent);
+  color: var(--btn-primary-fg);
+  border-left-color: var(--accent-soft);
+}
+[data-theme="light"] .diss-content .gloss-link[href*="g-principle-"] {
+  background: rgba(194, 93, 54, 0.12);
+}
 [data-theme="light"] .diss-content .gloss-link {
   border-bottom-color: rgba(194, 93, 54, 0.55);
 }
