@@ -729,16 +729,17 @@
   .diss-toc {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 86%;
     max-width: 380px;
     height: 100vh;
     z-index: 70;
-    transition: left .25s ease;
+    transform: translateX(-100%);
+    transition: transform .25s ease;
     border-right: 1px solid var(--line-strong);
     background: var(--bg-1);
   }
-  .diss-toc.open { left: 0; }
+  .diss-toc.open { transform: translateX(0); }
   .toc-close { display: block; }
   .toc-toggle { display: inline-flex; }
   .diss-content { padding: 24px 22px 100px; }
