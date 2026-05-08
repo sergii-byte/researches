@@ -260,6 +260,42 @@
   letter-spacing: 0.01em;
 }
 
+/* Author's own definitions — visually highlighted callouts
+   ("пропонується розуміти", "визначаємо як", "у нашому розумінні", тощо) */
+.diss-content p.diss-callout {
+  position: relative;
+  padding: 18px 24px 18px 28px;
+  margin: 28px 0 32px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(
+    90deg,
+    rgba(217, 119, 87, 0.10) 0%,
+    rgba(217, 119, 87, 0.04) 60%,
+    transparent 100%);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+.diss-content p.diss-callout::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -3px;
+  width: 3px;
+  height: 28px;
+  background: var(--accent-soft);
+  box-shadow: 0 0 12px rgba(217, 119, 87, 0.6);
+}
+[data-theme="light"] .diss-content p.diss-callout {
+  background: linear-gradient(
+    90deg,
+    rgba(194, 93, 54, 0.10) 0%,
+    rgba(194, 93, 54, 0.03) 60%,
+    transparent 100%);
+}
+.diss-content p.diss-callout strong { color: var(--accent); }
+
 /* Inline glossary cross-references — first occurrence per chapter */
 .diss-content .gloss-link {
   color: inherit;
