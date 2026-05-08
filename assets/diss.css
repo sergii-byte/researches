@@ -623,6 +623,70 @@
 .diss-content p + ul, .diss-content p + ol { margin-top: -0.4em; }
 .diss-content ul + p, .diss-content ol + p { margin-top: 0.4em; }
 
+/* Inclusion / exclusion criteria — visually distinct lists */
+.diss-content ul.criteria-include,
+.diss-content ul.criteria-exclude {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 24px;
+}
+.diss-content ul.criteria-include li,
+.diss-content ul.criteria-exclude li {
+  position: relative;
+  padding: 12px 16px 12px 48px;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-left: 3px solid;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0;
+}
+.diss-content ul.criteria-include li::before,
+.diss-content ul.criteria-exclude li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: currentColor;
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* Inclusion — green check */
+.diss-content ul.criteria-include li {
+  border-left-color: #6ba368;
+  background: rgba(107, 163, 104, 0.06);
+}
+.diss-content ul.criteria-include li::before {
+  background-color: #6ba368;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+}
+/* Exclusion — accent-deep cross */
+.diss-content ul.criteria-exclude li {
+  border-left-color: var(--accent-deep);
+  background: rgba(217, 119, 87, 0.07);
+}
+.diss-content ul.criteria-exclude li::before {
+  background-color: var(--accent-deep);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='6' x2='6' y2='18'/><line x1='6' y1='6' x2='18' y2='18'/></svg>");
+}
+/* Light theme tweaks */
+[data-theme="light"] .diss-content ul.criteria-include li {
+  background: rgba(107, 163, 104, 0.08);
+}
+[data-theme="light"] .diss-content ul.criteria-exclude li {
+  background: rgba(194, 93, 54, 0.08);
+}
+
 /* Figures — chart/diagram images extracted from the docx */
 .diss-figure {
   margin: 36px auto 40px;
