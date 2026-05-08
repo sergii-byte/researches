@@ -316,6 +316,30 @@
   background: rgba(194, 93, 54, 0.08);
 }
 
+/* Variable chips — when author enumerates variables/factors after «такими ..., як» */
+.diss-content p .var-chip {
+  display: inline-block;
+  padding: 1px 11px;
+  margin: 0 1px;
+  border-radius: 999px;
+  background: rgba(217, 119, 87, 0.10);
+  border: 1px solid rgba(217, 119, 87, 0.28);
+  color: var(--accent-deep);
+  font-weight: 500;
+  font-size: 0.96em;
+  font-family: inherit;
+  line-height: 1.6;
+}
+[data-theme="light"] .diss-content p .var-chip {
+  background: rgba(194, 93, 54, 0.09);
+  border-color: rgba(194, 93, 54, 0.32);
+}
+/* Gloss-links inside chips look the same colour, no extra underline */
+.diss-content p .var-chip .gloss-link {
+  border-bottom: 1px dashed rgba(217, 119, 87, 0.55);
+  color: inherit;
+}
+
 /* Inline reference markers: [13], [13; 24] */
 .ref-link {
   display: inline-block;
