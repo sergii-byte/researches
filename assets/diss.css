@@ -275,6 +275,7 @@
 .diss-content {
   padding: 56px 80px 140px;
   max-width: 100%;
+  min-width: 0;
   color: var(--ink);
   font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
 }
@@ -943,7 +944,7 @@
 }
 
 @media (max-width: 980px) {
-  .diss-shell { grid-template-columns: 1fr; }
+  .diss-shell { grid-template-columns: minmax(0, 1fr); }
   .diss-toc {
     position: fixed;
     top: 0;
