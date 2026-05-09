@@ -16,6 +16,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://barinovphd.netlify.app/en/dissertation/"/>
   </url>
   <url>
+    <loc>https://barinovphd.netlify.app/predictors/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinovphd.netlify.app/predictors/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinovphd.netlify.app/en/predictors/"/>
+  </url>
+  <url>
     <loc>https://barinovphd.netlify.app/glossary/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
