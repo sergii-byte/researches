@@ -17,8 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20260510c">
-<link rel="stylesheet" href="../assets/predictors.css?v=20260510c">
+<link rel="stylesheet" href="../assets/style.css?v=20260510d">
+<link rel="stylesheet" href="../assets/predictors.css?v=20260510d">
 <script src="../assets/theme.js"></script>
 </head>
 <body>
@@ -57,8 +57,19 @@
 
   <div class="container">
 
+    <!-- On-page navigation -->
+    <nav class="pred-toc" aria-label="Розділи сторінки">
+      <a href="#explainer">Чинник vs предиктор</a>
+      <a href="#source">Методики</a>
+      <a href="#model">4 рівні моделі</a>
+      <a href="#components">8 компонентів</a>
+      <a href="#table">Таблиця</a>
+      <a href="#stats">Статистика</a>
+      <a href="#notes">Чесність</a>
+    </nav>
+
     <!-- Difference explainer -->
-    <section class="pred-explainer">
+    <section class="pred-explainer" id="explainer">
       <h2>Чинник vs предиктор</h2>
       <div class="explainer-grid">
         <div class="explainer-card">
@@ -77,7 +88,7 @@
     </section>
 
     <!-- Methodology source quote -->
-    <section class="pred-source">
+    <section class="pred-source" id="source">
       <h2>Методичний інструментарій <span class="source-label">verbatim з дисертації</span></h2>
       <blockquote class="source-quote">
         «У емпіричному дослідженні були використані наступні психодіагностичні методики: 1) методика діагностики резильєнтності в адаптації <strong>Е. Грішина</strong>; 2) скорочена версія Шкали резильєнтності (<strong>CD-RISC-10</strong>) Dr's Campbell-Sills та Stein в адаптації З. О. Кіреєвої, О. С. Односталко, Б. В. Бірона; 3) <strong>авторська методика альтруїстичної спрямованості волонтера</strong>; 4) Шкала екзистенції (<strong>Existenzskala</strong>) А. Ленґле та К. Орглер в адаптації С. В. Кривцової; 5) <strong>Тест екзистенційної сповненості (екзистенційних мотивацій)</strong> А. Ленґле в адаптації В. Б. Шумського, О. М. Уколової, Є. М. Осіна, Я. Д. Лупандіної; 6) <strong>Опитувальник особистісної зрілості</strong> за методикою О. С. Штепи; 7) Особистісний опитувальник Айзенка <strong>EPI</strong>; 8) Шкала Спілберга в адаптації Ю. Л. Ханіна; 9) Опитувальник способів копінгу <strong>Лазаруса та Фолкман</strong> в адаптації Л. Й. Васермана.»
@@ -85,7 +96,7 @@
     </section>
 
     <!-- 4-level conceptual model -->
-    <section class="pred-model">
+    <section class="pred-model" id="model">
       <h2>Концептуальна модель: 4 рівні формування резильєнтності</h2>
       <p class="model-intro">Авторська архітектура Барінова — як <strong>8 категорій чинників</strong> з розділу 2 операціоналізуються у <strong>12 занять програми</strong> розділу 3 через 4 рівні впливу. Низхідна логіка: від «<em>хто я є</em>» через «<em>навіщо я роблю</em>» і «<em>як я справляюсь</em>» до «<em>що я роблю</em>».</p>
 
@@ -273,7 +284,7 @@
     </section>
 
     <!-- 8 components of resilience (the Y in regressions) -->
-    <section class="pred-components">
+    <section class="pred-components" id="components">
       <h2>8 компонентів резильєнтності <span class="source-label">залежні змінні (Y)</span></h2>
       <p class="comp-intro">Те, що дисертація <strong>передбачає</strong> через регресію — структура самої резильєнтності за методикою <strong>Е. Грішина</strong> (8 шкал) + інтегральний показник CD-RISC-10. Кожен компонент має <strong>власну регресійну модель</strong> (Т2.22–2.30) зі своїм набором предикторів і R². Норми границь визначені в дисертації емпірично за вибіркою.</p>
 
@@ -586,7 +597,7 @@
     </section>
 
     <!-- The big table -->
-    <section class="pred-table-section">
+    <section class="pred-table-section" id="table">
       <div class="pred-table-wrap">
         <table class="pred-table">
           <thead>
@@ -802,7 +813,7 @@
     </section>
 
     <!-- Summary stats -->
-    <section class="pred-stats">
+    <section class="pred-stats" id="stats">
       <h2>Зведена статистика</h2>
       <div class="stats-grid">
         <div class="stat-card stat-strong">
@@ -829,7 +840,7 @@
     </section>
 
     <!-- Notes / honesty section -->
-    <section class="pred-notes">
+    <section class="pred-notes" id="notes">
       <h2>Наукова чесність — застереження</h2>
       <div class="notes-grid">
         <div class="note-card">
@@ -852,7 +863,7 @@
     </section>
 
     <!-- Citation block -->
-    <section class="pred-cite">
+    <section class="pred-cite" id="cite">
       <h2>Як посилатися</h2>
       <div class="cite-block">
         <p>Барінов С. А. Психологічні особливості формування резильєнтності у волонтерів : дис. … д-ра філософії : 053 Психологія / Інститут психології імені Г. С. Костюка НАПН України. Київ, 2025. Розділ 2, підрозділ 2.4. Регресійні моделі предикторів резильєнтності, табл. 2.22–2.30.</p>
@@ -875,8 +886,22 @@
 </footer>
 
 <script>
-// Filter chips
 document.addEventListener('DOMContentLoaded', () => {
+  // Sticky on-page TOC active-section highlighting
+  const tocLinks = document.querySelectorAll('.pred-toc a');
+  const sections = [...tocLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if (sections.length) {
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+      if (visible.length) {
+        const id = visible[0].target.id;
+        tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    }, { rootMargin: '-130px 0px -60% 0px', threshold: 0 });
+    sections.forEach(s => observer.observe(s));
+  }
+
+  // Filter chips
   const chips = document.querySelectorAll('.filter-chips .chip');
   const rows = document.querySelectorAll('.pred-table tbody tr');
   chips.forEach(chip => {
