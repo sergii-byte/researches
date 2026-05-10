@@ -158,16 +158,26 @@
   border-radius: 12px;
   border: 1px solid var(--line-strong);
   background: var(--bg-1);
+  /* Right-edge gradient hint that more content scrolls to the right */
+  background-image: linear-gradient(to right, transparent calc(100% - 24px), rgba(217, 119, 87, 0.10) 100%);
+  scrollbar-width: thin;
+}
+.pred-table-wrap::-webkit-scrollbar { height: 8px; }
+.pred-table-wrap::-webkit-scrollbar-track { background: var(--bg-1); }
+.pred-table-wrap::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+  opacity: 0.6;
 }
 .pred-table {
   width: 100%;
-  min-width: 1100px;
+  min-width: 1000px;
   /* Use separate borders so sticky cells render their borders correctly */
   border-collapse: separate;
   border-spacing: 0;
   font-family: var(--sans);
-  font-size: 13.5px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--ink);
   table-layout: fixed;
 }
@@ -190,14 +200,15 @@
 }
 .pred-table thead th:first-child { border-left: 1px solid var(--table-border); }
 .pred-table tbody td {
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--table-border);
   border-right: 1px solid var(--table-border);
   vertical-align: top;
-  /* Allow long Ukrainian words to wrap */
-  overflow-wrap: anywhere;
+  /* Allow long words to wrap on natural boundaries; avoid auto-hyphens
+     which produced awkward breaks like "конта-ктність" */
+  overflow-wrap: break-word;
   word-break: normal;
-  hyphens: auto;
+  hyphens: manual;
 }
 .pred-table tbody td:first-child { border-left: 1px solid var(--table-border); }
 .pred-table tbody tr:hover td { background: rgba(217, 119, 87, 0.04); }
@@ -221,12 +232,12 @@
   font-size: 13px;
   color: var(--ink-soft);
 }
-.pred-table .col-cat { width: 11%; }
-.pred-table .col-theory { width: 15%; }
-.pred-table .col-method { width: 17%; }
-.pred-table .col-comp { width: 16%; }
-.pred-table .col-pred { width: 13%; }
-.pred-table .col-target { width: 28%; }
+.pred-table .col-cat { width: 10%; }
+.pred-table .col-theory { width: 14%; }
+.pred-table .col-method { width: 16%; }
+.pred-table .col-comp { width: 17%; }
+.pred-table .col-pred { width: 11%; }
+.pred-table .col-target { width: 32%; }
 
 .pred-table .col-comp,
 .pred-table tbody td:nth-child(4) {
