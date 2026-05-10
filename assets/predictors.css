@@ -201,17 +201,23 @@
 }
 .pred-table tbody td:first-child { border-left: 1px solid var(--table-border); }
 .pred-table tbody tr:hover td { background: rgba(217, 119, 87, 0.04); }
+.pred-table tr.cat-row td.cat-name,
+.pred-table tr.cat-row td.cat-theory,
+.pred-table tr.cat-row td.cat-method {
+  vertical-align: middle;  /* center content vertically inside tall rowspan cells */
+}
 .pred-table tr.cat-row td.cat-name {
   font-family: var(--serif);
   font-size: 15.5px;
   font-weight: 600;
   color: var(--accent);
-  background: rgba(217, 119, 87, 0.06);
+  background: rgba(217, 119, 87, 0.10);
   letter-spacing: -0.1px;
+  text-align: center;
 }
-.pred-table .cat-theory,
-.pred-table .cat-method {
-  background: rgba(217, 119, 87, 0.03);
+.pred-table tr.cat-row td.cat-theory,
+.pred-table tr.cat-row td.cat-method {
+  background: rgba(217, 119, 87, 0.04);
   font-size: 13px;
   color: var(--ink-soft);
 }
@@ -226,6 +232,18 @@
 .pred-table tbody td:nth-child(4) {
   font-weight: 500;
   color: var(--ink);
+}
+
+/* Inline component description (5-7 words italicized) */
+.comp-cell-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 11.5px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-mute);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
 }
 
 /* Predictor status pills */
