@@ -154,21 +154,22 @@
 /* The big table */
 .pred-table-wrap {
   overflow-x: auto;
-  margin: 0 -8px;
+  margin: 0;
   border-radius: 12px;
   border: 1px solid var(--line-strong);
-  background: var(--glass);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: var(--bg-1);
 }
 .pred-table {
   width: 100%;
-  min-width: 1000px;
-  border-collapse: collapse;
+  min-width: 1100px;
+  /* Use separate borders so sticky cells render their borders correctly */
+  border-collapse: separate;
+  border-spacing: 0;
   font-family: var(--sans);
   font-size: 13.5px;
   line-height: 1.55;
   color: var(--ink);
+  table-layout: fixed;
 }
 .pred-table thead th {
   background: var(--bg-1);
@@ -178,17 +179,27 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-align: left;
-  padding: 14px 14px;
-  border: 1px solid var(--table-border);
+  padding: 14px 12px;
+  /* All four borders explicit (separate-borders mode) */
+  border-top: 1px solid var(--table-border);
+  border-bottom: 2px solid var(--accent);
+  border-right: 1px solid var(--table-border);
   position: sticky;
   top: 64px;
   z-index: 5;
 }
+.pred-table thead th:first-child { border-left: 1px solid var(--table-border); }
 .pred-table tbody td {
   padding: 12px 14px;
-  border: 1px solid var(--table-border);
+  border-bottom: 1px solid var(--table-border);
+  border-right: 1px solid var(--table-border);
   vertical-align: top;
+  /* Allow long Ukrainian words to wrap */
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
 }
+.pred-table tbody td:first-child { border-left: 1px solid var(--table-border); }
 .pred-table tbody tr:hover td { background: rgba(217, 119, 87, 0.04); }
 .pred-table tr.cat-row td.cat-name {
   font-family: var(--serif);
@@ -204,11 +215,11 @@
   font-size: 13px;
   color: var(--ink-soft);
 }
-.pred-table .col-cat { width: 12%; }
-.pred-table .col-theory { width: 16%; }
-.pred-table .col-method { width: 18%; }
+.pred-table .col-cat { width: 11%; }
+.pred-table .col-theory { width: 15%; }
+.pred-table .col-method { width: 17%; }
 .pred-table .col-comp { width: 16%; }
-.pred-table .col-pred { width: 10%; }
+.pred-table .col-pred { width: 13%; }
 .pred-table .col-target { width: 28%; }
 
 .pred-table .col-comp,
@@ -224,7 +235,6 @@
 .pred-structural {
   font-weight: 500;
   font-size: 12.5px;
-  white-space: nowrap;
 }
 .pred-yes {
   color: #16a34a;
