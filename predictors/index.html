@@ -17,8 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20260510d">
-<link rel="stylesheet" href="../assets/predictors.css?v=20260510d">
+<link rel="stylesheet" href="../assets/style.css?v=20260510e">
+<link rel="stylesheet" href="../assets/predictors.css?v=20260510e">
 <script src="../assets/theme.js"></script>
 </head>
 <body>
@@ -59,7 +59,7 @@
 
     <!-- On-page navigation -->
     <nav class="pred-toc" aria-label="Розділи сторінки">
-      <a href="#explainer">Чинник vs предиктор</a>
+      <a href="#explainer">Корелят / чинник / предиктор</a>
       <a href="#source">Методики</a>
       <a href="#model">4 рівні моделі</a>
       <a href="#components">8 компонентів</a>
@@ -70,21 +70,36 @@
 
     <!-- Difference explainer -->
     <section class="pred-explainer" id="explainer">
-      <h2>Чинник vs предиктор</h2>
-      <div class="explainer-grid">
+      <h2>Корелят, чинник, предиктор — три рівні строгості</h2>
+
+      <div class="explainer-grid explainer-grid-3">
+        <div class="explainer-card">
+          <h3>Корелят</h3>
+          <p>Будь-яка змінна, що <strong>статистично пов'язана</strong> з резильєнтністю. Виявляється <a href="../glossary/#g-correlation">кореляційним аналізом</a>. Симетрична зв'язка — не каже, хто на кого впливає.</p>
+          <p class="explainer-meta">Найширше поняття. Опис: «рухається разом з резильєнтністю».</p>
+        </div>
+        <div class="explainer-arrow" aria-hidden="true">→</div>
         <div class="explainer-card">
           <h3>Чинник</h3>
-          <p>Будь-яка психологічна характеристика, що <strong>статистично пов'язана</strong> з резильєнтністю. Виявляється через <a href="../glossary/#g-correlation">кореляційний аналіз</a> та порівняння груп (<a href="../glossary/#g-kruskal-wallis">Краскала-Уолліса H</a>, <a href="../glossary/#g-mann-whitney">U Манна-Уітні</a>).</p>
-          <p class="explainer-meta">Ширше поняття. Опис: «з резильєнтністю пов'язано».</p>
+          <p>Корелят, що додатково має <strong>3 умови</strong>:</p>
+          <ol class="explainer-criteria">
+            <li>статистично значуща кореляція (r або ρ);</li>
+            <li><strong>теоретичну обґрунтованість</strong> впливу — є наукова рамка, яка пояснює <em>чому</em> ця змінна впливає на резильєнтність (теорія Айзенка, Ленґле, Лазарус-Фолкман тощо);</li>
+            <li>підтверджується <strong>порівнянням груп</strong> — стійко працює на різних підвибірках (<a href="../glossary/#g-kruskal-wallis">Краскал-Уолліс H</a>, <a href="../glossary/#g-mann-whitney">U Манна-Уітні</a>).</li>
+          </ol>
+          <p class="explainer-meta">Середній рівень. Опис: «теоретично і емпірично впливає на резильєнтність».</p>
         </div>
         <div class="explainer-arrow" aria-hidden="true">→</div>
         <div class="explainer-card explainer-card-strong">
           <h3>Предиктор</h3>
-          <p>Складова, що в <a href="../glossary/#g-regression">регресійній моделі</a> зберігає <strong>унікальний внесок</strong> у пояснення резильєнтності — після контролю всіх інших кандидатів. Має значущий <a href="../glossary/#g-beta">β-коефіцієнт</a> (p &lt; 0,05).</p>
-          <p class="explainer-meta">Вужче, строгіше. Опис: «передбачає при контролі решти».</p>
+          <p>Чинник, що в <a href="../glossary/#g-regression">регресійній моделі</a> зберігає <strong>унікальний внесок</strong> у пояснення резильєнтності — після контролю всіх інших кандидатів. Має значущий <a href="../glossary/#g-beta">β-коефіцієнт</a> (p &lt; 0,05).</p>
+          <p class="explainer-meta">Найвужче, найстрогіше. Опис: «реально тягне резильєнтність, а не живе поруч».</p>
         </div>
       </div>
-      <p class="explainer-note">Метафора: чинник — усі «співмешканці» резильєнтності. Предиктор — той, кого регресія після ретельного відсіву ідентифікувала як <strong>справжнього двигуна</strong>, а не родича двигуна, що просто поруч.</p>
+
+      <p class="explainer-note">У дисертації: десятки <strong>корелятів</strong> (Т2.10–2.18) → 8 теоретично обґрунтованих <strong>чинників</strong> (Розділ 2.3) → 22 «вижилих» <strong>предиктори</strong> у регресіях Т2.22–2.30.</p>
+
+      <p class="explainer-note">Метафора: корелят — будь-яка людина, що поруч з резильєнтністю. Чинник — той, хто має <em>законні підстави</em> там бути (теорія + повторюваність). Предиктор — той, кого регресія після ретельного відсіву ідентифікувала як <strong>справжнього двигуна</strong>, а не родича двигуна.</p>
     </section>
 
     <!-- Methodology source quote -->
