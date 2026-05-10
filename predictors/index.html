@@ -17,8 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20260510b">
-<link rel="stylesheet" href="../assets/predictors.css?v=20260510b">
+<link rel="stylesheet" href="../assets/style.css?v=20260510c">
+<link rel="stylesheet" href="../assets/predictors.css?v=20260510c">
 <script src="../assets/theme.js"></script>
 </head>
 <body>
@@ -277,9 +277,87 @@
       <h2>8 компонентів резильєнтності <span class="source-label">залежні змінні (Y)</span></h2>
       <p class="comp-intro">Те, що дисертація <strong>передбачає</strong> через регресію — структура самої резильєнтності за методикою <strong>Е. Грішина</strong> (8 шкал) + інтегральний показник CD-RISC-10. Кожен компонент має <strong>власну регресійну модель</strong> (Т2.22–2.30) зі своїм набором предикторів і R². Норми границь визначені в дисертації емпірично за вибіркою.</p>
 
+      <!-- Compact list view -->
+      <ol class="comp-list">
+        <li class="comp-list-item">
+          <span class="comp-list-num">1</span>
+          <div class="comp-list-body">
+            <a href="#comp-1" class="comp-list-name">Орієнтація на виклики і досягнення цілей</a>
+            <span class="comp-list-meta">прагнення сприймати труднощі як виклики</span>
+            <span class="comp-list-stat">T2.22 · R² = 82,5%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">2</span>
+          <div class="comp-list-body">
+            <a href="#comp-2" class="comp-list-name">Самоконтроль і здатність долати труднощі</a>
+            <span class="comp-list-meta">саморегуляція під тиском, наполегливість</span>
+            <span class="comp-list-stat">T2.23 · R² = 83,6%</span>
+          </div>
+        </li>
+        <li class="comp-list-item comp-list-highlight">
+          <span class="comp-list-num">3</span>
+          <div class="comp-list-body">
+            <a href="#comp-3" class="comp-list-name">Самодетермінація і осмисленість життя</a>
+            <span class="comp-list-meta">внутрішнє авторство життя, наявність смислу</span>
+            <span class="comp-list-stat">T2.24 · R² = 90,4%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">4</span>
+          <div class="comp-list-body">
+            <a href="#comp-4" class="comp-list-name">Стресостійкість</a>
+            <span class="comp-list-meta">збереження рівноваги під впливом стресу</span>
+            <span class="comp-list-stat">T2.25 · R² = 89,2%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">5</span>
+          <div class="comp-list-body">
+            <a href="#comp-5" class="comp-list-name">Конструктивні копінги</a>
+            <span class="comp-list-meta">володіння адаптивними стратегіями подолання</span>
+            <span class="comp-list-stat">T2.26 · R² = 79,2%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">6</span>
+          <div class="comp-list-body">
+            <a href="#comp-6" class="comp-list-name">Соціальна контактність</a>
+            <span class="comp-list-meta">включеність у спільноту, підтримка зв'язків</span>
+            <span class="comp-list-stat">T2.27 · R² = 93,5% ⭐</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">7</span>
+          <div class="comp-list-body">
+            <a href="#comp-7" class="comp-list-name">Оптимальна регуляція</a>
+            <span class="comp-list-meta">гнучке емоційно-поведінкове реагування</span>
+            <span class="comp-list-stat">T2.28 · R² = 88,9%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">8</span>
+          <div class="comp-list-body">
+            <a href="#comp-8" class="comp-list-name">Відкритість життєвому досвіду</a>
+            <span class="comp-list-meta">готовність приймати і навчатися з нового</span>
+            <span class="comp-list-stat">T2.29 · R² = 89,5%</span>
+          </div>
+        </li>
+        <li class="comp-list-item comp-list-integral">
+          <span class="comp-list-num">∑</span>
+          <div class="comp-list-body">
+            <a href="#comp-integral" class="comp-list-name">Загальна резильєнтність <em>(інтегральний показник)</em></a>
+            <span class="comp-list-meta">сумарна оцінка з CD-RISC-10 для крос-валідації</span>
+            <span class="comp-list-stat">T2.30 · R² = 87,5%</span>
+          </div>
+        </li>
+      </ol>
+
+      <details class="comp-details-toggle">
+        <summary>Розгорнути детальні картки кожного компонента (предиктори з β)</summary>
       <div class="comp-grid">
 
-        <article class="comp-card">
+        <article id="comp-1" class="comp-card">
           <header class="comp-head">
             <span class="comp-num">1</span>
             <div>
@@ -302,7 +380,7 @@
           </div>
         </article>
 
-        <article class="comp-card">
+        <article id="comp-2" class="comp-card">
           <header class="comp-head">
             <span class="comp-num">2</span>
             <div>
@@ -325,7 +403,7 @@
           </div>
         </article>
 
-        <article class="comp-card comp-highlight">
+        <article id="comp-3" class="comp-card comp-highlight">
           <header class="comp-head">
             <span class="comp-num">3</span>
             <div>
@@ -347,7 +425,7 @@
           </div>
         </article>
 
-        <article class="comp-card">
+        <article id="comp-4" class="comp-card">
           <header class="comp-head">
             <span class="comp-num">4</span>
             <div>
@@ -372,7 +450,7 @@
           </div>
         </article>
 
-        <article class="comp-card">
+        <article id="comp-5" class="comp-card">
           <header class="comp-head">
             <span class="comp-num">5</span>
             <div>
@@ -393,7 +471,7 @@
           </div>
         </article>
 
-        <article class="comp-card">
+        <article id="comp-6" class="comp-card">
           <header class="comp-head">
             <span class="comp-num">6</span>
             <div>
@@ -418,7 +496,7 @@
           </div>
         </article>
 
-        <article class="comp-card">
+        <article id="comp-7" class="comp-card">
           <header class="comp-head">
             <span class="comp-num">7</span>
             <div>
@@ -443,7 +521,7 @@
           </div>
         </article>
 
-        <article class="comp-card">
+        <article id="comp-8" class="comp-card">
           <header class="comp-head">
             <span class="comp-num">8</span>
             <div>
@@ -467,7 +545,7 @@
           </div>
         </article>
 
-        <article class="comp-card comp-integral">
+        <article id="comp-integral" class="comp-card comp-integral">
           <header class="comp-head">
             <span class="comp-num">∑</span>
             <div>
@@ -492,6 +570,7 @@
         </article>
 
       </div>
+      </details>
 
       <p class="comp-note"><strong>Як це використовувати:</strong> якщо хочеш зрозуміти, які саме «важелі» діють для конкретного компонента резильєнтності — клікни на регресійній моделі (Т2.22–Т2.30) і прокрути таблицю нижче. Якщо хочеш цілитися в загальну резильєнтність — головні мішені програми це <strong>самоприйняття, свобода вибору, пошук соц. підтримки і самотрансценденція</strong>: чотири складові з різних чинників, що разом пояснюють 87,5% дисперсії.</p>
     </section>
