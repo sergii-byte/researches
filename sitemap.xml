@@ -2,48 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://barinovphd.netlify.app/</loc>
+    <loc>https://barinov.science/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://barinovphd.netlify.app/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://barinovphd.netlify.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/"/>
   </url>
   <url>
-    <loc>https://barinovphd.netlify.app/dissertation/</loc>
+    <loc>https://barinov.science/dissertation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://barinovphd.netlify.app/dissertation/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://barinovphd.netlify.app/en/dissertation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/dissertation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/dissertation/"/>
   </url>
   <url>
-    <loc>https://barinovphd.netlify.app/predictors/</loc>
+    <loc>https://barinov.science/predictors/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://barinovphd.netlify.app/glossary/</loc>
+    <loc>https://barinov.science/glossary/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://barinovphd.netlify.app/glossary/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://barinovphd.netlify.app/en/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/glossary/"/>
   </url>
   <url>
-    <loc>https://barinovphd.netlify.app/faq/</loc>
+    <loc>https://barinov.science/faq/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://barinovphd.netlify.app/en/</loc>
+    <loc>https://barinov.science/en/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://barinovphd.netlify.app/en/dissertation/</loc>
+    <loc>https://barinov.science/en/dissertation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://barinovphd.netlify.app/en/glossary/</loc>
+    <loc>https://barinov.science/en/glossary/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
