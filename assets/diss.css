@@ -792,8 +792,8 @@
   line-height: 1.4;
   color: var(--ink);
   word-break: normal;
-  overflow-wrap: anywhere;
-  hyphens: auto;
+  overflow-wrap: break-word;
+  hyphens: manual;
 }
 .diss-table thead th {
   text-align: center;
@@ -824,8 +824,20 @@
   font-feature-settings: "tnum" 1, "lnum" 1;
   text-align: center;
 }
-/* First column of body — left-aligned text labels */
-.diss-table tbody td:first-child { text-align: left; font-weight: 500; color: var(--ink); }
+/* First column of body — left-aligned text labels, never hyphenate */
+.diss-table tbody td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: normal;
+  word-break: keep-all;
+  hyphens: none;
+  min-width: 90px;
+}
+/* First column header (Автор/Показники) — same width treatment */
+.diss-table thead th:first-child {
+  min-width: 90px;
+}
 .diss-table tbody tr:last-child td { border-bottom: 0; }
 .diss-table tbody tr:nth-child(even) td {
   background: rgba(255, 255, 255, 0.02);
