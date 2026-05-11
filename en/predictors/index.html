@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factors and Predictors of Resilience — Barinov S. A.</title>
+<meta name="description" content="Verified table from the dissertation: 8 categories of psychological factors, measurement methods (Shtepa, EPI, Spielberger-Hanin, Längle, WCQ Lazarus-Folkman), components of each category, those that became significant predictors of resilience in regression analysis, and which components they predict.">
+<link rel="canonical" href="https://barinov.science/en/predictors/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Factors and Predictors of Resilience — Barinov S. A.">
+<meta property="og:description" content="Summary table of 9 regression models: which components of 8 categories of psychological factors became significant predictors of resilience components.">
+<meta property="og:image" content="https://barinov.science/assets/og-image.png">
+<meta property="og:url" content="https://barinov.science/en/predictors/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/predictors.css">
+<script src="../../assets/theme.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><a href="../" style="color:inherit;text-decoration:none;">Barinov <em>S. A.</em></a></div>
+    <button class="menu-btn" type="button" aria-label="Menu" id="menuBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="13" x2="20" y2="13"/><line x1="4" y1="19" x2="20" y2="19"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="../dissertation/">Dissertation</a>
+      <a href="../#articles">Articles</a>
+      <a href="./" class="active">Model</a>
+      <a href="../glossary/">Glossary</a>
+      <a href="../faq/">FAQ</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a class="lang" href="../../predictors/">UA</a>
+    </nav>
+  </div>
+</header>
+<div class="menu-backdrop" id="menuBackdrop"></div>
+
+<main id="main-content" class="pred-main">
+  <header class="pred-header">
+    <div class="container">
+      <span class="eyebrow">Verified from the dissertation · regression tables 2.22–2.30</span>
+      <h1>Factors and <em>predictors</em> of volunteer resilience</h1>
+      <p class="lede">Summary table across 9 regression models from the dissertation. For each of <strong>8 categories</strong> of psychological factors, this page shows: the theoretical school, the measurement method used in the dissertation, all components, whether each component became a <strong>significant predictor</strong> in regression, and which components of resilience it predicts (with β-coefficients).</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <nav class="pred-toc" aria-label="Page sections">
+      <a href="#explainer">Correlate / Factor / Predictor</a>
+      <a href="#source">Methods</a>
+      <a href="#model">4-level model</a>
+      <a href="#components">8 components</a>
+      <a href="#table">Table</a>
+      <a href="#stats">Statistics</a>
+      <a href="#notes">Caveats</a>
+    </nav>
+
+    <section class="pred-explainer" id="explainer">
+      <h2>Correlate, factor, predictor — three levels of rigour</h2>
+
+      <div class="explainer-grid explainer-grid-3">
+        <div class="explainer-card">
+          <h3>Correlate</h3>
+          <p>Any variable <strong>statistically associated</strong> with resilience. Identified via <a href="../glossary/#g-correlation">correlation analysis</a>. Symmetric relationship — does not indicate which causes which.</p>
+          <p class="explainer-meta">Broadest concept. Description: «moves together with resilience».</p>
+        </div>
+        <div class="explainer-arrow" aria-hidden="true">→</div>
+        <div class="explainer-card">
+          <h3>Factor</h3>
+          <p>A correlate that additionally meets <strong>three conditions</strong>:</p>
+          <ol class="explainer-criteria">
+            <li>statistically significant correlation (r or ρ);</li>
+            <li><strong>theoretical grounding</strong> of influence — a scientific framework explaining <em>why</em> the variable affects resilience (Maslow &amp; Shtepa — personal maturity; Eysenck — temperament; Spielberger — anxiety; Längle — existence and FM; Lazarus-Folkman — coping; A. Beck, A. Ellis — cognitive-behavioural theory; Hobfoll — resources);</li>
+            <li>confirmed by <strong>group comparison</strong> — robust across sub-samples (<a href="../glossary/#g-kruskal-wallis">Kruskal-Wallis H</a>, <a href="../glossary/#g-mann-whitney">Mann-Whitney U</a>).</li>
+          </ol>
+          <p class="explainer-meta">Mid-level. Description: «theoretically and empirically affects resilience».</p>
+        </div>
+        <div class="explainer-arrow" aria-hidden="true">→</div>
+        <div class="explainer-card explainer-card-strong">
+          <h3>Predictor</h3>
+          <p>A factor that, in a <a href="../glossary/#g-regression">regression model</a>, retains a <strong>unique contribution</strong> to predicting resilience — after controlling for all other candidates. Has a significant <a href="../glossary/#g-beta">β-coefficient</a> (p &lt; 0.05).</p>
+          <p class="explainer-meta">Narrowest, strictest. Description: «truly drives resilience, not merely co-occurs with it».</p>
+        </div>
+      </div>
+
+      <p class="explainer-note">In the dissertation: dozens of <strong>correlates</strong> (T2.10–2.18) → 8 theoretically-grounded <strong>factors</strong> (Chapter 2.3) → 22 «surviving» <strong>predictors</strong> in regression models T2.22–2.30.</p>
+
+      <p class="explainer-note">Metaphor: a correlate is anyone standing near resilience. A factor is someone with <em>legitimate reason</em> to be there (theory + reproducibility). A predictor is the one whom regression, after rigorous filtering, identified as the <strong>actual engine</strong> — not a relative of the engine.</p>
+    </section>
+
+    <section class="pred-source" id="source">
+      <h2>Methodological instruments <span class="source-label">verbatim from dissertation</span></h2>
+      <blockquote class="source-quote">
+        «The empirical study used the following psychodiagnostic methods: 1) resilience diagnostic method in <strong>E. Hrishyn</strong>'s adaptation; 2) the short version of the <strong>CD-RISC-10</strong> Resilience Scale by Campbell-Sills &amp; Stein in adaptation by Z. O. Kireieva, O. S. Odnostalko, B. V. Biron; 3) <strong>author's method for diagnosing the volunteer's altruistic orientation</strong>; 4) Existence Scale (<strong>Existenzskala</strong>) by A. Längle &amp; C. Orgler in S. V. Kryvtsova's adaptation; 5) <strong>Test of Existential Motivations (TEM)</strong> by A. Längle in adaptation by V. B. Shumskyi, O. M. Ukolova, Ye. M. Osin, Ya. D. Lupandina; 6) <strong>Personal Maturity Questionnaire</strong> by O. S. Shtepa; 7) Eysenck Personality Inventory <strong>EPI</strong>; 8) Spielberger Anxiety Scale in Yu. L. Hanin's adaptation; 9) Ways of Coping Questionnaire by <strong>Lazarus &amp; Folkman</strong> in L. Y. Vasserman's adaptation.»
+      </blockquote>
+    </section>
+
+    <section class="pred-model" id="model">
+      <h2>Conceptual model: 4 levels of resilience formation</h2>
+      <p class="model-intro">Barinov's original architecture — how <strong>8 categories of factors</strong> from Chapter 2 are operationalised into <strong>12 sessions of the program</strong> in Chapter 3 through 4 levels of intervention. Top-down logic: from «<em>who I am</em>» through «<em>why I do this</em>» and «<em>how I cope</em>» to «<em>what I do</em>».</p>
+
+      <div class="model-flow">
+
+        <div class="level-card level-1">
+          <div class="level-header">
+            <span class="level-num">1</span>
+            <div>
+              <h3>Personal (foundational) level</h3>
+              <p class="level-question">«Who I am»</p>
+            </div>
+          </div>
+          <div class="level-body">
+            <p class="level-desc">Basic dispositions, traits, inner support. Without a solid foundation, subsequent levels cannot hold.</p>
+            <div class="level-grid">
+              <div class="level-block">
+                <h4>Factor categories</h4>
+                <ul class="level-cats">
+                  <li><a href="#cat-1">Personal maturity</a> <span class="cat-meta">Shtepa's 10 scales</span></li>
+                  <li><a href="#cat-2">Emotional stability</a> <span class="cat-meta">Eysenck EPI</span></li>
+                </ul>
+              </div>
+              <div class="level-block">
+                <h4>Theoretical foundations</h4>
+                <ul class="level-theories">
+                  <li><strong>Humanistic psychology</strong> (A. Maslow, C. Rogers) — innate tendency toward self-actualisation; maturity and resilience are grounded in self-acceptance, authenticity, openness to experience</li>
+                  <li><strong>Biological theory of temperament</strong> (H. Eysenck) — neuroticism as inborn nervous-system reactivity; defines baseline emotional stability/instability as the foundation of stress response</li>
+                  <li><strong>Concept of personal maturity</strong> (O. S. Shtepa) — Ukrainian original 10-factor model of the mature personality; integrates the humanistic tradition into an empirical measurement tool</li>
+                </ul>
+              </div>
+              <div class="level-block">
+                <h4>Program sessions (Module 1)</h4>
+                <ol class="level-sessions">
+                  <li><strong>Session 1.</strong> Introduction, programme overview, baseline assessment</li>
+                  <li><strong>Session 2.</strong> Personal maturity and the volunteer's inner support</li>
+                  <li><strong>Session 3.</strong> Emotional stability and self-acceptance</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="level-arrow" aria-hidden="true">
+          <span>on which motivation rests</span>
+        </div>
+
+        <div class="level-card level-2">
+          <div class="level-header">
+            <span class="level-num">2</span>
+            <div>
+              <h3>Motivational-meaning level</h3>
+              <p class="level-question">«Why I do this»</p>
+            </div>
+          </div>
+          <div class="level-body">
+            <p class="level-desc">Values, meanings, motives. The layer of «what drives» volunteer activity.</p>
+            <div class="level-grid">
+              <div class="level-block">
+                <h4>Factor categories</h4>
+                <ul class="level-cats">
+                  <li><a href="#cat-4">Existentiality</a> <span class="cat-meta">Existenzskala</span></li>
+                  <li><a href="#cat-5">Fundamental motivations (FM)</a> <span class="cat-meta">Längle's TEM</span></li>
+                  <li><a href="#cat-6">Altruistic orientation</a> <span class="cat-meta">Barinov's own scale</span></li>
+                </ul>
+              </div>
+              <div class="level-block">
+                <h4>Theoretical foundations</h4>
+                <ul class="level-theories">
+                  <li><strong>Self-Determination Theory</strong> (E. Deci, R. Ryan) — three basic psychological needs (autonomy + competence + relatedness) as conditions for intrinsic motivation and psychological well-being</li>
+                  <li><strong>Existential analysis</strong> (V. Frankl → A. Längle) — search for meaning as the principal motivational force; four fundamental motivations as conditions of existential fulfilment («I can be / I like to live / I have the right to be myself / I want to do something»)</li>
+                  <li><strong>Humanistic approach</strong> (C. Rogers) — innate growth tendency; congruence between real-self and ideal-self as a condition of healthy functioning</li>
+                  <li><strong>Theories of altruism</strong> (D. Batson — empathy-altruism hypothesis, demonstrates the selflessness of true helping; G. Allport — productive personality and prosocial values; E. Fromm — productive character, «to be rather than to have»)</li>
+                </ul>
+              </div>
+              <div class="level-block">
+                <h4>Program sessions (Module 2)</h4>
+                <ol class="level-sessions" start="4">
+                  <li><strong>Session 4.</strong> Motivation for volunteer activity</li>
+                  <li><strong>Session 5.</strong> Values and meaning of volunteer work</li>
+                  <li><strong>Session 6.</strong> Mature altruistic orientation</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="level-arrow" aria-hidden="true">
+          <span>on which regulation rests</span>
+        </div>
+
+        <div class="level-card level-3">
+          <div class="level-header">
+            <span class="level-num">3</span>
+            <div>
+              <h3>Regulatory level</h3>
+              <p class="level-question">«How I cope»</p>
+            </div>
+          </div>
+          <div class="level-body">
+            <p class="level-desc">Coping strategies, emotion regulation, crisis response. The layer of «how to handle» stress and challenges.</p>
+            <div class="level-grid">
+              <div class="level-block">
+                <h4>Factor categories</h4>
+                <ul class="level-cats">
+                  <li><a href="#cat-7">Coping strategies</a> <span class="cat-meta">WCQ Lazarus-Folkman</span></li>
+                  <li><a href="#cat-3">Anxiety</a> <span class="cat-meta">Spielberger-Hanin</span></li>
+                </ul>
+              </div>
+              <div class="level-block">
+                <h4>Theoretical foundations</h4>
+                <ul class="level-theories">
+                  <li><strong>Transactional theory of coping</strong> (R. Lazarus, S. Folkman) — stress arises not from the event itself but from its cognitive appraisal versus resources («am I able to handle this»); coping as a dynamic process of adaptive response</li>
+                  <li><strong>Cognitive-behavioural therapy</strong> (A. Beck — theory of dysfunctional beliefs and automatic thoughts; A. Ellis — rational emotive therapy, ABC model: activating event → irrational belief → emotional consequence; modifying beliefs changes the response)</li>
+                  <li><strong>Resource approach</strong> (S. Hobfoll) — Conservation of Resources theory: people have a fundamental motive to retain and accumulate resources (time, energy, status, relationships); stress arises under threat of resource loss or actual loss</li>
+                  <li><strong>Two-factor model of anxiety</strong> (C. D. Spielberger) — distinction between state (situational anxiety) and trait (stable disposition toward anxiety); each requires different interventions</li>
+                </ul>
+              </div>
+              <div class="level-block">
+                <h4>Program sessions (Module 3)</h4>
+                <ol class="level-sessions" start="7">
+                  <li><strong>Session 7.</strong> Stress and individual reactions of the volunteer</li>
+                  <li><strong>Session 8.</strong> Coping strategies for overcoming difficulties</li>
+                  <li><strong>Session 9.</strong> Emotion regulation and cognitive reappraisal</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="level-arrow" aria-hidden="true">
+          <span>how this manifests outwardly</span>
+        </div>
+
+        <div class="level-card level-4">
+          <div class="level-header">
+            <span class="level-num">4</span>
+            <div>
+              <h3>Behavioural level <em>(integrative)</em></h3>
+              <p class="level-question">«What I do»</p>
+            </div>
+          </div>
+          <div class="level-body">
+            <p class="level-desc">Integration of all previous levels into the volunteer's real behaviour. Consolidation at the behavioural level through transfer to daily practice.</p>
+            <div class="level-grid">
+              <div class="level-block">
+                <h4>Factor categories</h4>
+                <ul class="level-cats">
+                  <li><a href="#cat-8">Volunteer experience tenure</a> <span class="cat-meta">structural indicator</span></li>
+                  <li class="cat-integrative">+ integration of all categories from levels 1–3</li>
+                </ul>
+              </div>
+              <div class="level-block">
+                <h4>Theoretical foundations</h4>
+                <ul class="level-theories">
+                  <li><strong>Systemic approach «personality–activity–environment»</strong> (O. Leontiev, S. Rubinstein, post-Soviet psychological school) — personality forms and manifests through activity; cannot change personality outside real action, cannot separate it from the environment in which it acts</li>
+                  <li><strong>Adaptation trajectories</strong> (G. Bonanno, 2004) — after a traumatic event people follow 4 typical paths: resilient (~60%, minimal symptoms), recovery, chronic distress, delayed reaction; resilience is the most common outcome, not exceptional</li>
+                  <li><strong>Existential-action integration</strong> — synthesis of the existential approach and activity theory: meaning is realised only through real actions with conscious choice, limits, and responsibility for consequences</li>
+                </ul>
+              </div>
+              <div class="level-block">
+                <h4>Program sessions (Module 4)</h4>
+                <ol class="level-sessions" start="10">
+                  <li><strong>Session 10.</strong> Conscious choice of forms of help</li>
+                  <li><strong>Session 11.</strong> Psychological boundaries and balance of involvement</li>
+                  <li><strong>Session 12.</strong> Integration of experience and final reflection</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="model-output" aria-hidden="true">
+          <span>↓</span>
+          <strong>Resilient volunteer</strong>
+          <span class="output-meta">remains in activity, does not burn out, integrates traumatic experience into a positive narrative</span>
+        </div>
+
+      </div>
+
+      <p class="model-note"><strong>Model logic:</strong> each level rests on the previous one. Coping strategies (level 3) cannot be developed in a participant with critically low personal maturity (level 1) — it becomes a «facade» without foundation. Therefore the program proceeds <strong>sequentially</strong>: first strengthening the foundation, then building the motivational layer, then adding regulatory skills, and only at the end integrating everything into behavioural practice.</p>
+    </section>
+
+    <section class="pred-components" id="components">
+      <h2>8 components of resilience <span class="source-label">dependent variables (Y)</span></h2>
+      <p class="comp-intro">What the dissertation <strong>predicts</strong> through regression — the structure of resilience itself per <strong>E. Hrishyn</strong>'s method (8 scales) + the integral CD-RISC-10 indicator. Each component has its <strong>own regression model</strong> (T2.22–2.30) with its own set of predictors and R². The boundary norms were determined empirically by the dissertation sample.</p>
+
+      <ol class="comp-list">
+        <li class="comp-list-item">
+          <span class="comp-list-num">1</span>
+          <div class="comp-list-body">
+            <a href="#comp-1" class="comp-list-name">Orientation to challenges and goal achievement</a>
+            <span class="comp-list-meta">tendency to perceive difficulties as challenges</span>
+            <span class="comp-list-stat">T2.22 · R² = 82.5%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">2</span>
+          <div class="comp-list-body">
+            <a href="#comp-2" class="comp-list-name">Self-control and ability to overcome difficulties</a>
+            <span class="comp-list-meta">self-regulation under pressure, persistence</span>
+            <span class="comp-list-stat">T2.23 · R² = 83.6%</span>
+          </div>
+        </li>
+        <li class="comp-list-item comp-list-highlight">
+          <span class="comp-list-num">3</span>
+          <div class="comp-list-body">
+            <a href="#comp-3" class="comp-list-name">Self-determination and meaningfulness of life</a>
+            <span class="comp-list-meta">inner authorship of life, presence of meaning</span>
+            <span class="comp-list-stat">T2.24 · R² = 90.4%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">4</span>
+          <div class="comp-list-body">
+            <a href="#comp-4" class="comp-list-name">Stress resistance</a>
+            <span class="comp-list-meta">maintaining equilibrium under stress</span>
+            <span class="comp-list-stat">T2.25 · R² = 89.2%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">5</span>
+          <div class="comp-list-body">
+            <a href="#comp-5" class="comp-list-name">Constructive coping</a>
+            <span class="comp-list-meta">command of adaptive coping strategies</span>
+            <span class="comp-list-stat">T2.26 · R² = 79.2%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">6</span>
+          <div class="comp-list-body">
+            <a href="#comp-6" class="comp-list-name">Social connectedness</a>
+            <span class="comp-list-meta">community inclusion, maintaining connections</span>
+            <span class="comp-list-stat">T2.27 · R² = 93.5% ⭐</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">7</span>
+          <div class="comp-list-body">
+            <a href="#comp-7" class="comp-list-name">Optimal regulation</a>
+            <span class="comp-list-meta">flexible emotional-behavioural responding</span>
+            <span class="comp-list-stat">T2.28 · R² = 88.9%</span>
+          </div>
+        </li>
+        <li class="comp-list-item">
+          <span class="comp-list-num">8</span>
+          <div class="comp-list-body">
+            <a href="#comp-8" class="comp-list-name">Openness to life experience</a>
+            <span class="comp-list-meta">readiness to accept and learn from the new</span>
+            <span class="comp-list-stat">T2.29 · R² = 89.5%</span>
+          </div>
+        </li>
+        <li class="comp-list-item comp-list-integral">
+          <span class="comp-list-num">∑</span>
+          <div class="comp-list-body">
+            <a href="#comp-integral" class="comp-list-name">Overall resilience <em>(integral indicator)</em></a>
+            <span class="comp-list-meta">summary score from CD-RISC-10 for cross-validation</span>
+            <span class="comp-list-stat">T2.30 · R² = 87.5%</span>
+          </div>
+        </li>
+      </ol>
+
+      <p class="comp-note"><strong>How to use this:</strong> if you want to understand which «levers» drive a particular component of resilience — click on a regression model (T2.22–T2.30) and scroll the table below. If you want to target overall resilience — the main programme targets are <strong>self-acceptance, freedom of choice, social support seeking, and self-transcendence</strong>: four components from different categories that together explain 87.5% of variance.</p>
+    </section>
+
+    <section class="pred-filter">
+      <h2>Filter</h2>
+      <div class="filter-chips" role="tablist">
+        <button class="chip active" data-filter="all">All components</button>
+        <button class="chip" data-filter="predictor">Only predictors</button>
+        <button class="chip" data-filter="non-predictor">Non-predictors</button>
+      </div>
+    </section>
+
+    <section class="pred-table-section" id="table">
+      <div class="pred-table-wrap">
+        <table class="pred-table">
+          <thead>
+            <tr>
+              <th class="col-cat">Factor category</th>
+              <th class="col-theory">Theory</th>
+              <th class="col-method">Measurement method</th>
+              <th class="col-comp">Component</th>
+              <th class="col-pred">Predictor?</th>
+              <th class="col-target">Resilience component affected</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr class="cat-row" id="cat-1" data-pred="yes">
+              <td rowspan="10" class="cat-name">1. Personal maturity</td>
+              <td rowspan="10" class="cat-theory">Humanistic tradition (A. Maslow, C. Rogers, G. Allport, E. Fromm); personal maturity concept by <strong>O. S. Shtepa</strong></td>
+              <td rowspan="10" class="cat-method">Personal Maturity Questionnaire by <strong>O. S. Shtepa</strong> (10 scales)</td>
+              <td>Self-acceptance<div class="comp-cell-meta">positive attitude toward self with all flaws</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=1.08); Optimal regulation (β=0.27); <strong>Overall resilience</strong> (β=0.52)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Creativity<div class="comp-cell-meta">capacity for creative, non-standard thinking</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Self-control (β=0.38); Stress resistance (β=0.51); Openness (β=0.40)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Autonomy<div class="comp-cell-meta">independence of choice, reliance on own decisions</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Self-control (β=0.488); Stress resistance (β=0.49)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Responsibility<div class="comp-cell-meta">capacity to be accountable for one's actions and choices</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=0.49); Social connectedness (β=0.17); <strong>Overall</strong> (β=0.09)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Synergy<div class="comp-cell-meta">ability to see wholeness in apparent contradictions</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=0.72); <strong>Overall</strong> (β=0.15)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Contactness<div class="comp-cell-meta">openness and ease in interpersonal communication</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=0.60); Openness (β=0.12)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Life philosophy<div class="comp-cell-meta">coherent, meaningful worldview</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=0.71)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Tolerance<div class="comp-cell-meta">acceptance of people with different values and views</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=0.51)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Decentration<div class="comp-cell-meta">ability to step out of one's own perspective</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=0.53)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Depth of experience<div class="comp-cell-meta">capacity for intense, rich emotional experience</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=0.52)</td>
+            </tr>
+
+            <tr class="cat-row" id="cat-2" data-pred="yes">
+              <td rowspan="1" class="cat-name">2. Emotional stability</td>
+              <td rowspan="1" class="cat-theory">Biological theory of temperament <strong>H. Eysenck</strong></td>
+              <td rowspan="1" class="cat-method">Eysenck Personality Inventory <strong>EPI</strong> — only the N scale used <em>(in diss.: «emotional stability-instability scale»)</em></td>
+              <td>Neuroticism (N scale)<div class="comp-cell-meta">emotional instability, anxiety, mood swings</div></td>
+              <td class="pred-yes pred-neg">✓ yes (minus)</td>
+              <td>Challenges orientation (β=−0.14); Self-control (β=−0.31); Social connectedness (β=−0.10); Optimal regulation (β=−0.23)</td>
+            </tr>
+
+            <tr class="cat-row" id="cat-3" data-pred="yes">
+              <td rowspan="2" class="cat-name">3. Anxiety</td>
+              <td rowspan="2" class="cat-theory">Two-factor model <strong>C. D. Spielberger</strong> (state–trait)</td>
+              <td rowspan="2" class="cat-method">Anxiety scale by <strong>C. D. Spielberger</strong> in adaptation by <strong>Yu. L. Hanin</strong></td>
+              <td>Trait anxiety<div class="comp-cell-meta">stable disposition to perceive situations as threatening</div></td>
+              <td class="pred-yes pred-neg">✓ yes (minus)</td>
+              <td>Social connectedness (β=−0.09); Optimal regulation (β=−0.19)</td>
+            </tr>
+            <tr data-pred="no">
+              <td>State anxiety (situational)<div class="comp-cell-meta">current anxiety level in a specific moment</div></td>
+              <td class="pred-no">✗ no</td>
+              <td>—</td>
+            </tr>
+
+            <tr class="cat-row" id="cat-4" data-pred="yes">
+              <td rowspan="4" class="cat-name">4. Existentiality</td>
+              <td rowspan="4" class="cat-theory">Existential analysis <strong>A. Längle</strong> (Viennese school, continuation of V. Frankl's logotherapy)</td>
+              <td rowspan="4" class="cat-method">Existence Scale (<strong>Existenzskala</strong>) by A. Längle &amp; C. Orgler in <strong>S. V. Kryvtsova</strong>'s adaptation</td>
+              <td>Self-distancing (SD)<div class="comp-cell-meta">capacity to detach from own affects</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Challenges orientation (β=0.49)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Self-transcendence (ST)<div class="comp-cell-meta">openness to values beyond oneself</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Challenges orientation (β=0.35); <strong>Overall</strong> (β=0.25)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Freedom (F)<div class="comp-cell-meta">capacity to choose with awareness of options</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Self-control (β=0.30); Optimal regulation (β=0.26); <strong>Overall</strong> (β=0.32)</td>
+            </tr>
+            <tr data-pred="no">
+              <td>Responsibility (V)<div class="comp-cell-meta">acceptance of consequences</div></td>
+              <td class="pred-no">✗ no</td>
+              <td>— <em>(not isolated in regression separately)</em></td>
+            </tr>
+
+            <tr class="cat-row" id="cat-5" data-pred="yes">
+              <td rowspan="4" class="cat-name">5. Fundamental motivations (FM)</td>
+              <td rowspan="4" class="cat-theory">Theory of 4 fundamental existential motivations <strong>A. Längle</strong></td>
+              <td rowspan="4" class="cat-method">Test of Existential Motivations (<strong>TEM</strong>) by A. Längle in adaptation by V. B. Shumskyi et al.</td>
+              <td>FM-1: support, security, space<div class="comp-cell-meta">basic feeling: «I can be here»</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Constructive coping (β=0.27); Optimal regulation (β=0.11)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>FM-2: relatedness, time, closeness<div class="comp-cell-meta">valuing life: «I like to live»</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Stress resistance (β=0.11); Social connectedness (β=0.15); Optimal regulation (β=0.131); <strong>Overall</strong> (β=0.11)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>FM-3: attention, fairness, value recognition<div class="comp-cell-meta">self-identity: «I have the right to be myself»</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Optimal regulation (β=0.12); Openness (β=0.09); <strong>Overall</strong> (β=0.11)</td>
+            </tr>
+            <tr data-pred="no">
+              <td>FM-4: opportunity for action, inclusion, future value<div class="comp-cell-meta">motivation of meaning: «I want to do something»</div></td>
+              <td class="pred-no">✗ no</td>
+              <td>—</td>
+            </tr>
+
+            <tr class="cat-row" id="cat-6" data-pred="yes">
+              <td rowspan="1" class="cat-name">6. Altruistic orientation</td>
+              <td rowspan="1" class="cat-theory">Concepts of altruistic orientation <strong>D. Batson, G. Allport, E. Fromm</strong> + author's concept by S. A. Barinov</td>
+              <td rowspan="1" class="cat-method"><strong>Author's method</strong> of diagnosing volunteer's altruistic orientation (Barinov, Shandruk, 2025), 23 items, α=0.673, test-retest r=0.78</td>
+              <td>Altruistic orientation (overall score)<div class="comp-cell-meta">selfless motivation to help others without external reward</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Social connectedness (β=0.12); Openness (β=0.15)</td>
+            </tr>
+
+            <tr class="cat-row star-row" id="cat-7" data-pred="yes">
+              <td rowspan="8" class="cat-name">7. Coping strategies</td>
+              <td rowspan="8" class="cat-theory">Transactional theory of stress and coping <strong>R. Lazarus &amp; S. Folkman</strong></td>
+              <td rowspan="8" class="cat-method">Ways of Coping Questionnaire <strong>Lazarus-Folkman</strong> in <strong>L. Y. Vasserman</strong>'s adaptation (8 scales)</td>
+              <td>Social support seeking <span class="star">⭐</span><div class="comp-cell-meta">turning to others for emotional and practical help</div></td>
+              <td class="pred-yes">✓ yes <span class="universal">(most universal)</span></td>
+              <td>8 of 9 models: Challenges orientation (β=0.29); Self-determination (β=0.24); Stress resistance (β=0.36); Constructive coping (β=0.47); Social connectedness (β=0.13); Optimal regulation (β=0.31); Openness (β=0.43); <strong>Overall</strong> (β=0.31)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Accepting responsibility<div class="comp-cell-meta">acknowledging own role in the problematic situation</div></td>
+              <td class="pred-yes">✓ yes</td>
+              <td>Self-determination (β=0.11); <strong>Overall</strong> (β=0.09)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Distancing<div class="comp-cell-meta">emotional detachment without cognitive processing</div></td>
+              <td class="pred-yes pred-neg">✓ yes (minus)</td>
+              <td>Self-determination (β=−0.08)</td>
+            </tr>
+            <tr data-pred="yes">
+              <td>Confrontative coping<div class="comp-cell-meta">aggressive venting of emotions without problem-solving</div></td>
+              <td class="pred-yes pred-neg">✓ yes (minus)</td>
+              <td>Social connectedness (β=−0.11)</td>
+            </tr>
+            <tr data-pred="partial">
+              <td>Planful problem-solving<div class="comp-cell-meta">systematic situation analysis and step-by-step resolution</div></td>
+              <td class="pred-partial">⚠ positioned as</td>
+              <td><em>Named in the integral conclusion of Chapter 2.4 as one of the most influential predictors; separate β not shown in reviewed regression tables T2.22–2.30 (strong correlation in T2.18: r=0.48–0.56)</em></td>
+            </tr>
+            <tr data-pred="no">
+              <td>Self-control (behavioural)<div class="comp-cell-meta">restraining emotional reactions during stress</div></td>
+              <td class="pred-no">✗ no</td>
+              <td>— <em>(weak correlation r=0.24–0.39 only)</em></td>
+            </tr>
+            <tr data-pred="no">
+              <td>Escape-avoidance<div class="comp-cell-meta">physical or cognitive avoidance of the problem</div></td>
+              <td class="pred-no">✗ no</td>
+              <td>— <em>(not significant in correlation either)</em></td>
+            </tr>
+            <tr data-pred="no">
+              <td>Positive reappraisal<div class="comp-cell-meta">reframing as opportunity for growth</div></td>
+              <td class="pred-no">✗ no</td>
+              <td>— <em>(moderate correlation r=0.25–0.37 only)</em></td>
+            </tr>
+
+            <tr class="cat-row" id="cat-8" data-pred="structural">
+              <td rowspan="1" class="cat-name">8. Volunteer experience tenure</td>
+              <td rowspan="1" class="cat-theory">Adaptation trajectories research by <strong>G. Bonanno</strong> (dynamics of psychological adaptation after trauma) — directly cited in diss.</td>
+              <td rowspan="1" class="cat-method"><strong>Study questionnaire</strong>, 3 groups: «beginners» (up to 1 yr, n=44), «experienced» (up to 4 yrs, n=55), «veterans» (4+ yrs, n=28)</td>
+              <td>Beginners / Experienced / Veterans<div class="comp-cell-meta">volunteer tenure: up to 1 / 1–4 / 4+ years</div></td>
+              <td class="pred-structural">— structural</td>
+              <td>Does not enter regression; serves as grouping variable for non-parametric comparison (<a href="../glossary/#g-kruskal-wallis">Kruskal-Wallis</a>, <a href="../glossary/#g-mann-whitney">Mann-Whitney U</a>)</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="pred-stats" id="stats">
+      <h2>Summary statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-card stat-strong">
+          <div class="stat-num">10/10</div>
+          <div class="stat-label">Components of <strong>Personal Maturity</strong> became predictors</div>
+          <div class="stat-meta">100% — category with highest «predictor density»</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">8/9</div>
+          <div class="stat-label">Regression models include <strong>Social Support Seeking</strong></div>
+          <div class="stat-meta">Most universal coping predictor</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">12</div>
+          <div class="stat-label">Significant predictors in the <strong>Stress Resistance</strong> model</div>
+          <div class="stat-meta">Richest programme target (R²=89.2%)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">≈63%</div>
+          <div class="stat-label">Components that passed regression</div>
+          <div class="stat-meta">22 of 35 in categories 1–7</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pred-notes" id="notes">
+      <h2>Methodological caveats</h2>
+      <div class="notes-grid">
+        <div class="note-card">
+          <h3>What is verified with 100% certainty</h3>
+          <ul>
+            <li>All β-coefficients — from regression tables 2.22–2.30 of the dissertation</li>
+            <li>List of 9 methods — from the «Methods of Research» section</li>
+            <li>List of 10 Shtepa scales, 8 WCQ copings, 4 FM, 2 anxiety scales — verbatim from Chapter 2.3</li>
+            <li>Attribution of tenure to Bonanno's concept — confirmed: cited 10 times in dissertation</li>
+          </ul>
+        </div>
+        <div class="note-card note-warn">
+          <h3>What remains probabilistic</h3>
+          <ul>
+            <li>Attribution of the variable «<strong>Responsibility</strong>» (without scale subscript) in T2.25/2.27/2.30 specifically to Shtepa rather than to Existenzskala (V) — based on context of other variables in the row</li>
+            <li>Status of «<strong>Planful problem-solving</strong>» as a predictor — named in the integral conclusion of 2.4, but separate β not shown in the reviewed 9 regression tables</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="pred-cite">
+      <h2>How to cite</h2>
+      <div class="cite-block">
+        <p>Barinov, S. A. (2026). <em>Psychological features of resilience formation in volunteers</em> [PhD dissertation, G. S. Kostiuk Institute of Psychology, NAES of Ukraine]. Chapter 2, section 2.4: Regression models of resilience predictors, tables 2.22–2.30.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2025 Barinov S. A.</div>
+    <div class="footer-links">
+      <a href="../">Home</a> ·
+      <a href="../dissertation/">Dissertation</a> ·
+      <a href="../glossary/">Glossary</a> ·
+      <a href="../faq/">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tocLinks = document.querySelectorAll('.pred-toc a');
+  const sections = [...tocLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if (sections.length) {
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+      if (visible.length) {
+        const id = visible[0].target.id;
+        tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    }, { rootMargin: '-130px 0px -60% 0px', threshold: 0 });
+    sections.forEach(s => observer.observe(s));
+  }
+
+  const chips = document.querySelectorAll('.filter-chips .chip');
+  const rows = document.querySelectorAll('.pred-table tbody tr');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const f = chip.dataset.filter;
+      rows.forEach(r => {
+        const p = r.dataset.pred || 'structural';
+        let show = true;
+        if (f === 'predictor') show = (p === 'yes' || p === 'partial');
+        else if (f === 'non-predictor') show = (p === 'no' || p === 'structural');
+        r.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const backdrop = document.querySelector('.menu-backdrop');
+  menuBtn?.addEventListener('click', () => {
+    navLinks?.classList.toggle('open');
+    backdrop?.classList.toggle('open');
+  });
+  backdrop?.addEventListener('click', () => {
+    navLinks?.classList.remove('open');
+    backdrop?.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
