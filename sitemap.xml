@@ -47,20 +47,28 @@
     <loc>https://barinov.science/en/dissertation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/dissertation/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/dissertation/"/>
   </url>
   <url>
     <loc>https://barinov.science/en/predictors/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/predictors/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/predictors/"/>
   </url>
   <url>
     <loc>https://barinov.science/en/glossary/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/glossary/"/>
   </url>
   <url>
     <loc>https://barinov.science/en/faq/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/faq/"/>
   </url>
 </urlset>
