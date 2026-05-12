@@ -1294,6 +1294,27 @@ section[id] { scroll-margin-top: 130px; }
 }
 .comp-note strong:first-of-type { color: var(--accent-deep); }
 
+/* ===== Explainer narrative lede + bridge ===== */
+.explainer-lede {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.explainer-bridge {
+  margin: 24px 0 0;
+  padding: 14px 18px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.025), transparent);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 14.5px;
+  color: var(--ink);
+}
+.explainer-bridge strong { color: var(--accent-deep); }
+[data-theme="dark"] .explainer-bridge {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), transparent);
+}
+
 /* ===== Key findings synthesis block ===== */
 .pred-keyfindings {
   margin: 40px 0 0;
