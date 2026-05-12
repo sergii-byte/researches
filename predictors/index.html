@@ -17,8 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20260512d">
-<link rel="stylesheet" href="../assets/predictors.css?v=20260512d">
+<link rel="stylesheet" href="../assets/style.css?v=20260512e">
+<link rel="stylesheet" href="../assets/predictors.css?v=20260512e">
 <script src="../assets/theme.js"></script>
 </head>
 <body>
@@ -56,6 +56,31 @@
   </header>
 
   <div class="container">
+
+    <!-- Shell: left sidebar TOC + content body -->
+    <div class="pred-shell">
+
+      <aside class="pred-side-toc" aria-label="Розділи сторінки">
+        <button class="side-toc-toggle" type="button" aria-label="Розгорнути зміст" aria-expanded="true">
+          <span class="side-toc-head">Розділи сторінки</span>
+          <svg class="side-toc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <nav class="side-toc-nav">
+          <a href="#about">Про дослідження</a>
+          <a href="#explainer">Дослідницький виклик</a>
+          <a href="#key-findings">Головні висновки</a>
+          <a href="#components">Структура резильєнтності</a>
+          <a href="#model">Як формується резильєнтність</a>
+          <a href="#source">Інструменти виміру</a>
+          <a href="#table">Повна таблиця чинників</a>
+          <a href="#stats">Ключові цифри</a>
+          <a href="#notes">Застереження</a>
+          <a href="#audiences">Кому корисно</a>
+          <a href="#next">Куди далі</a>
+        </nav>
+      </aside>
+
+      <div class="pred-body">
 
     <!-- About the research: at-a-glance info card -->
     <section class="pred-about" id="about">
@@ -126,31 +151,6 @@
       </div>
     </section>
 
-
-    <!-- Shell: left sidebar TOC + content body -->
-    <div class="pred-shell">
-
-      <aside class="pred-side-toc" aria-label="Розділи сторінки">
-        <button class="side-toc-toggle" type="button" aria-label="Розгорнути зміст" aria-expanded="true">
-          <span class="side-toc-head">Розділи сторінки</span>
-          <svg class="side-toc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <nav class="side-toc-nav">
-          <a href="#about">Про дослідження</a>
-          <a href="#explainer">Дослідницький виклик</a>
-          <a href="#key-findings">Головні висновки</a>
-          <a href="#components">Структура резильєнтності</a>
-          <a href="#model">Як формується резильєнтність</a>
-          <a href="#source">Інструменти виміру</a>
-          <a href="#table">Повна таблиця чинників</a>
-          <a href="#stats">Ключові цифри</a>
-          <a href="#notes">Застереження</a>
-          <a href="#audiences">Кому корисно</a>
-          <a href="#next">Куди далі</a>
-        </nav>
-      </aside>
-
-      <div class="pred-body">
 
     <!-- Research challenge: methodological funnel -->
     <section class="pred-explainer" id="explainer">
