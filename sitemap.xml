@@ -37,6 +37,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/faq/"/>
   </url>
   <url>
+    <loc>https://barinov.science/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/about/"/>
+  </url>
+  <url>
     <loc>https://barinov.science/en/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -70,5 +77,12 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/faq/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/faq/"/>
+  </url>
+  <url>
+    <loc>https://barinov.science/en/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://barinov.science/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barinov.science/en/about/"/>
   </url>
 </urlset>
