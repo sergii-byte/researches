@@ -127,19 +127,30 @@
     </section>
 
 
-    <nav class="pred-toc" aria-label="Page sections">
-      <a href="#about">About the research</a>
-      <a href="#explainer">What is a predictor</a>
-      <a href="#key-findings">Main findings</a>
-      <a href="#model">How resilience is formed</a>
-      <a href="#components">Structure of resilience</a>
-      <a href="#source">Measurement instruments</a>
-      <a href="#table">Full factor table</a>
-      <a href="#stats">Key numbers</a>
-      <a href="#notes">Caveats</a>
-      <a href="#audiences">Who can use this</a>
-      <a href="#next">Where to go next</a>
-    </nav>
+    <!-- Shell: left sidebar TOC + content body -->
+    <div class="pred-shell">
+
+      <aside class="pred-side-toc" aria-label="Page sections">
+        <button class="side-toc-toggle" type="button" aria-label="Toggle contents" aria-expanded="true">
+          <span class="side-toc-head">On this page</span>
+          <svg class="side-toc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <nav class="side-toc-nav">
+          <a href="#about">About the research</a>
+          <a href="#explainer">What is a predictor</a>
+          <a href="#key-findings">Main findings</a>
+          <a href="#model">How resilience is formed</a>
+          <a href="#components">Structure of resilience</a>
+          <a href="#source">Measurement instruments</a>
+          <a href="#table">Full factor table</a>
+          <a href="#stats">Key numbers</a>
+          <a href="#notes">Caveats</a>
+          <a href="#audiences">Who can use this</a>
+          <a href="#next">Where to go next</a>
+        </nav>
+      </aside>
+
+      <div class="pred-body">
 
     <section class="pred-explainer" id="explainer">
       <h2>Correlate, factor, predictor — three levels of rigour</h2>
@@ -1047,7 +1058,11 @@
       </div>
     </section>
 
-  </div>
+  
+      </div><!-- /.pred-body -->
+    </div><!-- /.pred-shell -->
+
+</div>
 </main>
 
 <footer class="footer">
@@ -1064,7 +1079,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const tocLinks = document.querySelectorAll('.pred-toc a');
+  const tocLinks = document.querySelectorAll('.side-toc-nav a');
   const sections = [...tocLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   if (sections.length) {
     const observer = new IntersectionObserver((entries) => {
@@ -1104,6 +1119,14 @@ document.addEventListener('DOMContentLoaded', () => {
   backdrop?.addEventListener('click', () => {
     navLinks?.classList.remove('open');
     backdrop?.classList.remove('open');
+  });
+
+  // Sidebar TOC collapse
+  const sideToggle = document.querySelector('.side-toc-toggle');
+  const sideToc = document.querySelector('.pred-side-toc');
+  sideToggle?.addEventListener('click', () => {
+    const isOpen = sideToc?.classList.toggle('collapsed');
+    sideToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
   });
 });
 </script>
