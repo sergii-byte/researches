@@ -59,6 +59,7 @@
 
     <nav class="pred-toc" aria-label="Page sections">
       <a href="#explainer">Correlate / Factor / Predictor</a>
+      <a href="#key-findings">Key findings</a>
       <a href="#source">Methods</a>
       <a href="#model">4-level model</a>
       <a href="#components">8 components</a>
@@ -97,7 +98,45 @@
 
       <p class="explainer-note">In the dissertation: dozens of <strong>correlates</strong> (T2.10–2.18) → 8 theoretically-grounded <strong>factors</strong> (Chapter 2.3) → 22 «surviving» <strong>predictors</strong> in regression models T2.22–2.30.</p>
 
-      <p class="explainer-note">Metaphor: a correlate is anyone standing near resilience. A factor is someone with <em>legitimate reason</em> to be there (theory + reproducibility). A predictor is the one whom regression, after rigorous filtering, identified as the <strong>actual engine</strong> — not a relative of the engine.</p>
+      <p class="explainer-note">Metaphor: a correlate is anyone standing near resilience. A factor is someone with <em>legitimate reason</em> to be there (theory + reproducibility). A predictor is the one whom regression, after rigorous filtering, identified as the <strong>actual engine</strong> — not a passenger sitting next to it.</p>
+    </section>
+
+    <!-- Key empirical findings -->
+    <section class="pred-keyfindings" id="key-findings">
+      <h2>Four key empirical findings</h2>
+      <p class="kf-intro">What the dissertation <strong>established</strong> through 9 regression models — in concentrated form. Subsequent sections unpack each in detail.</p>
+
+      <div class="kf-grid">
+
+        <article class="kf-card kf-1">
+          <div class="kf-num">1</div>
+          <h3>Social support — the universal engine</h3>
+          <p><strong>Seeking-social-support coping</strong> is a significant predictor in <strong>8 of 9 regression models</strong> (β = 0.13–0.47). No other factor appears in so many models.</p>
+          <p class="kf-meta">Conclusion: the volunteer's resilience is not an individual strength but a socially-rooted phenomenon. A lone resilient volunteer is the rare exception.</p>
+        </article>
+
+        <article class="kf-card kf-2">
+          <div class="kf-num">2</div>
+          <h3>Neuroticism — the principal negative predictor</h3>
+          <p><strong>Neuroticism</strong> (emotional instability per Eysenck) lowers resilience in <strong>4 of 9 components</strong>: orientation to challenges (β = −0.14), self-control (β = −0.31, the strongest negative effect in this model), social connectedness (β = −0.10), and optimal regulation (β = −0.23).</p>
+          <p class="kf-meta">Conclusion: emotional lability is the key prevention target; working on it does not cure anxiety but forestalls a breakdown of resilience.</p>
+        </article>
+
+        <article class="kf-card kf-3">
+          <div class="kf-num">3</div>
+          <h3>Meaning — the most compact core</h3>
+          <p>The component <strong>"Self-determination and meaningfulness of life"</strong> has the highest explanatory parsimony: <strong>3 predictors explain 90.4% of variance</strong> (seeking social support β = 0.24, accepting responsibility β = 0.11, distancing β = −0.08).</p>
+          <p class="kf-meta">Conclusion: the sphere of meaning is the most integrated core of resilience; cultivating it yields maximum effect from minimal intervention.</p>
+        </article>
+
+        <article class="kf-card kf-4">
+          <div class="kf-num">4</div>
+          <h3>The core of overall resilience</h3>
+          <p>The integral indicator (CD-RISC-10) is explained by 5 key predictors at <strong>87.5%</strong>: <strong>self-acceptance</strong> (β = 0.52), <strong>freedom</strong> (0.32), <strong>seeking social support</strong> (0.31), <strong>self-transcendence</strong> (0.25), <strong>synergy</strong> (0.15).</p>
+          <p class="kf-meta">Conclusion: the four targets of the resilience-formation programme are not an arbitrary set but a statistically optimal target profile.</p>
+        </article>
+
+      </div>
     </section>
 
     <section class="pred-source" id="source">
@@ -592,12 +631,14 @@
       <p class="comp-note"><strong>How to use this:</strong> if you want to understand which «levers» drive a particular component of resilience — click on a regression model (T2.22–T2.30) and scroll the table below. If you want to target overall resilience — the main programme targets are <strong>self-acceptance, freedom of choice, social support seeking, and self-transcendence</strong>: four components from different categories that together explain 87.5% of variance.</p>
     </section>
 
+    <!-- Filter chips (integrated above table) -->
     <section class="pred-filter">
-      <h2>Filter</h2>
+      <h2>Table view</h2>
+      <p class="filter-note">Filter for the full table below — switch between all components, those that became significant predictors, and those that did not survive regression.</p>
       <div class="filter-chips" role="tablist">
-        <button class="chip active" data-filter="all">All components</button>
-        <button class="chip" data-filter="predictor">Only predictors</button>
-        <button class="chip" data-filter="non-predictor">Non-predictors</button>
+        <button class="chip active" data-filter="all">All 30 components</button>
+        <button class="chip" data-filter="predictor">Predictors only (23)</button>
+        <button class="chip" data-filter="non-predictor">Non-predictors (7)</button>
       </div>
     </section>
 
@@ -728,7 +769,7 @@
             <tr data-pred="yes">
               <td>FM-2: relatedness, time, closeness<div class="comp-cell-meta">valuing life: «I like to live»</div></td>
               <td class="pred-yes">✓ yes</td>
-              <td>Stress resistance (β=0.11); Social connectedness (β=0.15); Optimal regulation (β=0.131); <strong>Overall</strong> (β=0.11)</td>
+              <td>Stress resistance (β=0.11); Social connectedness (β=0.15); Optimal regulation (β=0.13); <strong>Overall</strong> (β=0.11)</td>
             </tr>
             <tr data-pred="yes">
               <td>FM-3: attention, fairness, value recognition<div class="comp-cell-meta">self-identity: «I have the right to be myself»</div></td>
@@ -827,9 +868,9 @@
           <div class="stat-meta">Richest programme target (R²=89.2%)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">≈63%</div>
-          <div class="stat-label">Components that passed regression</div>
-          <div class="stat-meta">22 of 35 in categories 1–7</div>
+          <div class="stat-num">23 / 30</div>
+          <div class="stat-label">Components became significant predictors</div>
+          <div class="stat-meta">≈77% in categories 1–7 (tenure is a structural grouping variable, not in regression)</div>
         </div>
       </div>
     </section>
