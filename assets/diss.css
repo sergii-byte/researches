@@ -934,6 +934,13 @@
   font-size: 18px;
   color: var(--accent);
 }
+/* Floating buttons sit above the nav backdrop — get them out of the way
+   while the mobile menu drawer is open. */
+.menu-open .toc-toggle,
+.menu-open .reading-ring {
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* Print stylesheet — academic users print */
 @media print {
@@ -964,6 +971,7 @@
     width: 86%;
     max-width: 380px;
     height: 100vh;
+    height: 100dvh; /* see .nav-links — 100vh overflows under mobile browser chrome */
     z-index: 70;
     transform: translateX(-100%);
     transition: transform .25s ease;

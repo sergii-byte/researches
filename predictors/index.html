@@ -17,9 +17,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20260512h">
+<link rel="stylesheet" href="../assets/style.css?v=20260729a">
 <link rel="stylesheet" href="../assets/predictors.css?v=20260512h">
 <script src="../assets/theme.js"></script>
+<script src="../assets/nav.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
@@ -1142,18 +1143,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-  // Mobile menu
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-  const backdrop = document.querySelector('.menu-backdrop');
-  menuBtn?.addEventListener('click', () => {
-    navLinks?.classList.toggle('open');
-    backdrop?.classList.toggle('open');
-  });
-  backdrop?.addEventListener('click', () => {
-    navLinks?.classList.remove('open');
-    backdrop?.classList.remove('open');
-  });
+  // Mobile menu lives in assets/nav.js (shared by every page).
 
   // Sidebar TOC: collapse/expand toggle (especially useful on mobile)
   const sideToggle = document.querySelector('.side-toc-toggle');
