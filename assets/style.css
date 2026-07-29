@@ -148,7 +148,10 @@ img { max-width: 100%; display: block; }
 /* Skip to content link — hidden until focused */
 .skip-link {
   position: absolute;
-  top: -40px;
+  /* translate rather than a fixed -40px offset: the box is ~43px tall, so the
+     magic number left a 3px sliver of it visible at the top of every page */
+  top: 0;
+  transform: translateY(-100%);
   left: 16px;
   background: var(--accent);
   color: var(--btn-primary-fg);
@@ -157,9 +160,9 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   font-weight: 600;
   z-index: 200;
-  transition: top .15s;
+  transition: transform .15s;
 }
-.skip-link:focus { top: 0; outline: 2px solid var(--ink); outline-offset: 2px; }
+.skip-link:focus { transform: translateY(0); outline: 2px solid var(--ink); outline-offset: 2px; }
 .nav-links {
   display: flex;
   gap: 28px;
@@ -692,9 +695,30 @@ img { max-width: 100%; display: block; }
   }
   .nav-links a.lang { text-align: center; margin-top: auto; }
   .nav-links .theme-toggle { width: 100%; justify-content: flex-start; padding: 14px 16px; border-radius: 10px; font-size: 15px; }
-  /* Backdrop when menu open */
-  .menu-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 55; opacity: 0; pointer-events: none; transition: opacity .25s; }
+  /* Backdrop when menu open.
+     Must stay BELOW the header: .nav is a stacking context (sticky + z-index +
+     backdrop-filter), so the drawer inside it can never paint above a sibling
+     with a higher z-index — at 55 the backdrop covered the drawer and swallowed
+     every tap on the menu links. */
+  .menu-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 45; opacity: 0; pointer-events: none; transition: opacity .25s; }
   .menu-backdrop.open { opacity: 1; pointer-events: auto; }
+  /* …which leaves the header itself undimmed, so it gets its own dim layer.
+     Below the drawer (z-index 60) but above the header's own content, and
+     transparent to taps so the hamburger still closes the menu. */
+  .nav::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+  }
+  .menu-open .nav::after { opacity: 1; }
+  /* Freeze the page behind an open drawer. Must sit on <html>: body overflow
+     does not propagate to the viewport here, because html is not overflow:visible. */
+  html.menu-open { overflow: hidden; }
   .author-card { padding: 26px; }
   .pub-item { padding: 22px 22px 22px 22px; }
   .pub-item::before { position: static; display: block; margin-bottom: 6px; font-size: 16px; }

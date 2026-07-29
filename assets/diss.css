@@ -934,6 +934,13 @@
   font-size: 18px;
   color: var(--accent);
 }
+/* Floating buttons sit above the nav backdrop — get them out of the way
+   while the mobile menu drawer is open. */
+.menu-open .toc-toggle,
+.menu-open .reading-ring {
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* Print stylesheet — academic users print */
 @media print {
