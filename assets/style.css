@@ -672,13 +672,18 @@ img { max-width: 100%; display: block; }
     right: 0;
     width: 80%;
     max-width: 340px;
+    /* dvh, not vh: on mobile Chrome 100vh is the URL-bar-hidden height, which
+       pushed the bottom item (EN) off screen while the URL bar was showing */
     height: 100vh;
+    height: 100dvh;
     background: var(--bg-1);
     border-left: 1px solid var(--line-strong);
     flex-direction: column;
     align-items: stretch;
     padding: 80px 28px 32px;
     gap: 8px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     transform: translateX(100%);
     transition: transform .25s ease;
     z-index: 60;
