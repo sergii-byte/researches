@@ -1,0 +1,4 @@
+node_modules/
+dist/_*.docx
+dist/*.pdf
+dist/*.jpg
