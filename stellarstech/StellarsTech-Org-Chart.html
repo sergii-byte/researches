@@ -41,6 +41,9 @@ body {
 /* Header */
 header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); padding-bottom: 24px; }
 .brand { display: flex; flex-direction: column; gap: 6px; }
+.co { font-family: var(--font-display); font-size: 18px; color: var(--muted); display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.co b { color: var(--ink); font-weight: 700; }
+.co a, .site { color: var(--accent); text-decoration: none; font-weight: 600; }
 .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4.4vw, 40px); line-height: 1.1; margin: 0; letter-spacing: -.02em; text-wrap: balance; }
 h1 .mark { color: var(--star); }
@@ -148,7 +151,7 @@ tr.total td { font-weight: 600; border-bottom: 0; }
 <div class="wrap">
   <header>
     <div class="brand">
-      <span class="eyebrow">StellarsTech Inc. · stellars.tech</span>
+      <div class="co"><b>StellarsTech Inc.</b><span>·</span><a href="https://stellars.tech" target="_blank" rel="noopener">stellars.tech</a></div>
       <h1>Organizational Chart<span class="mark">.</span></h1>
       <p class="sub">Reporting structure and headcount · September 2026</p>
     </div>
@@ -163,8 +166,8 @@ tr.total td { font-weight: 600; border-bottom: 0; }
   <section class="about" aria-label="About the company">
     <div>
       <h2>About</h2>
-      <p>A software development studio inspired by the space sector's revolutionary feats. StellarsTech delivers IT solutions for growing businesses, from consulting and roadmaps to full-cycle development.</p>
-      <dl><dt>Founded</dt><dd>2019</dd><dt>Offices</dt><dd>Waxhaw, North Carolina, USA · Santiago del Teide, Tenerife, Spain</dd></dl>
+      <p>A software development studio inspired by the space sector's revolutionary feats. <b>StellarsTech</b> delivers IT solutions for growing businesses, from consulting and roadmaps to full-cycle development.</p>
+      <dl><dt>Website</dt><dd><a class="site" href="https://stellars.tech" target="_blank" rel="noopener">https://stellars.tech</a></dd><dt>Founded</dt><dd>2019</dd><dt>Offices</dt><dd>Waxhaw, North Carolina, USA · Santiago del Teide, Tenerife, Spain</dd></dl>
     </div>
     <div>
       <h2>Services</h2>
