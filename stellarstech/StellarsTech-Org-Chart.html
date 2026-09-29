@@ -247,6 +247,9 @@ h1 .mark { color: var(--star); }
 .prow:first-child { border-top: 0; }
 .prow.hd { background: var(--accent-soft); font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-block: 7px; }
 .prow.tot { background: var(--bg); font-weight: 700; }
+.prow.bench .pname { color: var(--muted); }
+.prow.bench .pname::before { background: transparent; border: 1.5px dashed var(--accent); }
+.prow.bench .size .d i { background: transparent; border: 1.5px dashed var(--accent); opacity: 1; }
 .pname { font-family: var(--font-display); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; }
 .pname::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); flex: none; }
 .prow.tot .pname::before { display: none; }
@@ -274,8 +277,8 @@ h1 .mark { color: var(--star); }
         </div>
       </div>
       <div class="stats">
-        <div class="stat"><b>39</b><span>Total headcount</span></div>
-        <div class="stat"><b>33</b><span>In delivery</span></div>
+        <div class="stat"><b>41</b><span>Total headcount</span></div>
+        <div class="stat"><b>35</b><span>In delivery</span></div>
         <div class="stat"><b>7</b><span>Projects</span></div>
       </div>
     </div>
@@ -345,7 +348,7 @@ h1 .mark { color: var(--star); }
       <h3>Company</h3>
       <div><span>Website</span><b><a href="https://stellars.tech">https://stellars.tech</a></b></div>
       <div><span>Registered address</span><b>16192 Coastal Highway, Lewes, Delaware 19958, County of Sussex, USA</b></div>
-      <div><span>Team</span><b>39 people · 7 projects</b></div>
+      <div><span>Team</span><b>41 people · 7 projects</b></div>
     </div>
     <div>
       <h3>Services</h3>
@@ -388,7 +391,10 @@ h1 .mark { color: var(--star); }
       '<span class="size"><b>' + n + '</b><span class="d">' + '<i></i>'.repeat(n) + '</span></span>' +
       '<span class="stack-chips">' + stack.map(t => '<span>' + t + '</span>').join('') + '</span></div>');
   }
-  list.insertAdjacentHTML('beforeend', '<div class="prow tot"><span class="pname">Total in delivery</span><span></span><span class="size"><b>' + total + '</b><span class="alt" style="font-weight:500">people across 7 projects</span></span><span></span></div>');
+  const bench = 2; total += bench;
+  list.insertAdjacentHTML('beforeend', '<div class="prow bench"><span class="pname">Bench</span><span class="alt">Available for new projects</span>' +
+    '<span class="size"><b>' + bench + '</b><span class="d">' + '<i></i>'.repeat(bench) + '</span></span><span></span></div>');
+  list.insertAdjacentHTML('beforeend', '<div class="prow tot"><span class="pname">Total in delivery</span><span></span><span class="size"><b>' + total + '</b><span class="alt" style="font-weight:500">people: 7 projects + bench</span></span><span></span></div>');
   const c = document.getElementById('stars'), x = c.getContext('2d');
   let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
   for (let i = 0; i < 160; i++) {
