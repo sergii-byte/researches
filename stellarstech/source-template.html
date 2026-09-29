@@ -143,6 +143,34 @@ h1 .mark { color: var(--star); }
 .size .d i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); opacity: .85; }
 .stack-chips { display: flex; gap: 5px; flex-wrap: wrap; }
 .stack-chips span { font-family: var(--font-mono); font-size: 11px; border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; background: var(--bg); }
+
+/* Project blocks: two rows of four, joined to the CDO by a bus line */
+.pgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; width: 100%; position: relative; padding-top: 20px; }
+.pgrid::before { content: ""; position: absolute; top: 0; height: 1px; background: var(--line); left: calc((100% - 36px) / 8); right: calc((100% - 36px) / 8); }
+.pgrid.r1::after { content: ""; position: absolute; left: 50%; top: 0; bottom: -20px; width: 1px; background: var(--line); }
+.pgrid.r2 { margin-top: 0; }
+.pcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+.pcard::before { content: ""; position: absolute; top: -21px; left: 50%; width: 1px; height: 20px; background: var(--line); }
+.pgrid .pcard { overflow: visible; }
+.pc-head { background: var(--accent); color: #fff; padding: 8px 12px; border-radius: 9px 9px 0 0; display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
+.pc-head b { font-family: var(--font-display); font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pc-head small { display: none; font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+.pc-body { padding: 10px 12px 11px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.pc-lead { display: flex; align-items: center; gap: 8px; }
+.pc-lead .initials { width: 28px; height: 28px; font-size: 10px; margin: 0; }
+.pc-lead > span:last-child { display: flex; flex-direction: column; font-size: 13px; font-weight: 700; line-height: 1.25; min-width: 0; }
+.pc-lead small { font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+.pc-team { border-top: 1px solid var(--line); padding-top: 7px; display: flex; align-items: center; gap: 8px; }
+.pc-team b { font-family: var(--font-display); font-size: 18px; min-width: 22px; }
+.pc-team .d { display: flex; flex-wrap: wrap; gap: 3px; }
+.pc-team .d i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); opacity: .85; }
+.pc-stack { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.pc-stack span { font-family: var(--font-mono); font-size: 10.5px; border: 1px solid var(--line); border-radius: 999px; padding: 1px 7px; background: var(--bg); }
+.pcard.bench { border-style: dashed; border-color: var(--accent); background: transparent; }
+.pcard.bench .pc-head { background: var(--accent-soft); color: var(--accent); }
+.pcard.bench .pc-team .d i { background: transparent; border: 1.5px dashed var(--accent); opacity: 1; }
+.dtotal { margin-top: 12px; width: 100%; display: flex; justify-content: center; gap: 22px; font-size: 12.5px; color: var(--muted); }
+.dtotal b { color: var(--ink); font-family: var(--font-display); }
 </style>
 </head>
 <body>
@@ -180,9 +208,9 @@ h1 .mark { color: var(--star); }
           <div><span class="role">Deputy CEO · Chief Delivery Officer</span><span class="name">Serhii Kovalchuk</span><span class="alt">All client projects and delivery teams</span></div>
         </div>
         <div class="stem"></div>
-        <div class="plist" id="plist">
-          <div class="prow hd"><span>Project</span><span>Team lead</span><span>Team</span><span>Stack</span></div>
-        </div>
+        <div class="pgrid r1" id="r1"></div>
+        <div class="pgrid r2" id="r2"></div>
+        <div class="dtotal"><span>Total in delivery <b>35</b></span><span>On projects <b>33</b></span><span>Bench <b>2</b></span></div>
       </div>
 
       <div class="unit">
@@ -262,20 +290,16 @@ h1 .mark { color: var(--star); }
     ['MMA', 'Roman Sydor', 1, ['.NET']],
   ];
   const ini = n => n.split(' ').map(w => w[0]).join('');
-  const list = document.getElementById('plist');
-  let total = 0;
-  for (const [name, lead, n, stack] of P) {
-    total += n;
-    list.insertAdjacentHTML('beforeend',
-      '<div class="prow"><span class="pname">' + name + '</span>' +
-      '<span class="lead"><span class="initials">' + ini(lead) + '</span><span>' + lead + '<small>Team Lead</small></span></span>' +
-      '<span class="size"><b>' + n + '</b><span class="d">' + '<i></i>'.repeat(n) + '</span></span>' +
-      '<span class="stack-chips">' + stack.map(t => '<span>' + t + '</span>').join('') + '</span></div>');
-  }
-  const bench = 2; total += bench;
-  list.insertAdjacentHTML('beforeend', '<div class="prow bench"><span class="pname">Bench</span><span class="alt">Available for new projects</span>' +
-    '<span class="size"><b>' + bench + '</b><span class="d">' + '<i></i>'.repeat(bench) + '</span></span><span></span></div>');
-  list.insertAdjacentHTML('beforeend', '<div class="prow tot"><span class="pname">Total in delivery</span><span></span><span class="size"><b>' + total + '</b><span class="alt" style="font-weight:500">people: 7 projects + bench</span></span><span></span></div>');
+  const dots = n => '<span class="d">' + '<i></i>'.repeat(n) + '</span>';
+  const card = ([name, lead, n, stack]) =>
+    '<div class="pcard"><div class="pc-head"><b>' + name + '</b><small>Project</small></div><div class="pc-body">' +
+    '<div class="pc-lead"><span class="initials">' + ini(lead) + '</span><span><small>Team Lead</small>' + lead + '</span></div>' +
+    '<div class="pc-team"><b>' + n + '</b>' + dots(n) + '</div>' +
+    '<div class="pc-stack">' + stack.map(t => '<span>' + t + '</span>').join('') + '</div></div></div>';
+  const bench = '<div class="pcard bench"><div class="pc-head"><b>Bench</b><small>Pool</small></div><div class="pc-body">' +
+    '<div class="alt">Available for new projects</div><div class="pc-team"><b>2</b>' + dots(2) + '</div></div></div>';
+  document.getElementById('r1').innerHTML = P.slice(0, 4).map(card).join('');
+  document.getElementById('r2').innerHTML = P.slice(4).map(card).join('') + bench;
   const c = document.getElementById('stars'), x = c.getContext('2d');
   let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
   for (let i = 0; i < 160; i++) {
