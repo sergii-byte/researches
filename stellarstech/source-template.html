@@ -40,7 +40,7 @@ h1 .mark { color: var(--star); }
 .stat span { font-size: 12px; color: var(--muted); }
 
 /* Chart */
-.chart { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 22px 48px 20px; }
+.chart { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 24px 48px 20px; }
 .node { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; position: relative; }
 .role { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
 .name { font-family: var(--font-display); font-weight: 600; font-size: 16px; line-height: 1.3; }
@@ -55,8 +55,8 @@ h1 .mark { color: var(--star); }
 .stem { width: 1px; height: 20px; background: var(--line); flex: none; }
 
 /* Row of units under the CEO */
-.units { display: grid; grid-template-columns: 850px repeat(3, 1fr); gap: 24px; width: 100%; position: relative; padding-top: 20px; }
-.units::before { content: ""; position: absolute; top: 0; height: 1px; background: var(--line); left: 425px; right: calc((100% - 850px - 72px) / 6); }
+.units { display: grid; grid-template-columns: 790px repeat(3, 1fr); gap: 24px; width: 100%; position: relative; padding-top: 20px; }
+.units::before { content: ""; position: absolute; top: 0; height: 1px; background: var(--line); left: 395px; right: calc((100% - 790px - 72px) / 6); }
 .unit { display: flex; flex-direction: column; align-items: center; position: relative; min-width: 0; }
 .unit::before { content: ""; position: absolute; top: -20px; left: 50%; width: 1px; height: 20px; background: var(--line); }
 .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
@@ -95,7 +95,7 @@ h1 .mark { color: var(--star); }
 .subline { width: 1px; height: 16px; background: var(--line); }
 
 /* Company band */
-.band { background: var(--ink); color: var(--side-fg); padding: 26px 48px 22px; display: grid; grid-template-columns: 380px 300px 1fr; gap: 44px; position: relative; overflow: hidden; }
+.band { background: var(--ink); color: var(--side-fg); padding: 20px 48px 14px; row-gap: 14px; display: grid; grid-template-columns: 380px 300px 1fr; gap: 44px; position: relative; overflow: hidden; }
 .band canvas { position: absolute; inset: 0; opacity: .5; }
 .band > * { position: relative; }
 .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
@@ -107,7 +107,7 @@ h1 .mark { color: var(--star); }
 .facts span { display: block; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--side-muted); margin-bottom: 2px; }
 .facts b { font-weight: 600; line-height: 1.45; }
 .facts a { color: var(--star); text-decoration: none; }
-.services { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 9px 28px; }
+.services { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 7px 28px; }
 .services li { display: grid; grid-template-columns: 14px 1fr; }
 .services li::before { content: "✦"; color: var(--star); font-size: 9px; line-height: 18px; }
 .services b { font-size: 13px; font-weight: 700; line-height: 18px; }
@@ -115,6 +115,31 @@ h1 .mark { color: var(--star); }
 .legend { grid-column: 1 / -1; display: flex; justify-content: space-between; border-top: 1px solid var(--side-line); padding-top: 10px; font-size: 11.5px; color: var(--side-muted); }
 .legend div { display: flex; gap: 16px; align-items: center; }
 .legend i.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+
+/* Compact horizontal person cards */
+.person { flex-direction: row; align-items: center; gap: 12px; text-align: left; }
+.person .initials { margin: 0; }
+.person > div:not(.initials) { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.ceo.person, .cdo.person { width: 360px; }
+.dept.person { width: 100%; }
+/* Project list */
+.plist { width: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.prow { display: grid; grid-template-columns: 175px 215px 1fr 150px; align-items: center; gap: 12px; padding: 6px 16px; border-top: 1px solid var(--line); }
+.prow:first-child { border-top: 0; }
+.prow.hd { background: var(--accent-soft); font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); padding-block: 7px; }
+.prow.tot { background: var(--bg); font-weight: 700; }
+.pname { font-family: var(--font-display); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+.pname::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); flex: none; }
+.prow.tot .pname::before { display: none; }
+.lead { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; }
+.lead .initials { width: 26px; height: 26px; font-size: 10px; margin: 0; }
+.lead small { display: block; font-size: 10.5px; color: var(--muted); font-weight: 500; }
+.size { display: flex; align-items: center; gap: 10px; }
+.size b { font-family: var(--font-display); font-size: 16px; width: 22px; text-align: right; font-variant-numeric: tabular-nums; }
+.size .d { display: flex; gap: 4px; }
+.size .d i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); opacity: .85; }
+.stack-chips { display: flex; gap: 5px; flex-wrap: wrap; }
+.stack-chips span { font-family: var(--font-mono); font-size: 11px; border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; background: var(--bg); }
 </style>
 </head>
 <body>
@@ -130,75 +155,59 @@ h1 .mark { color: var(--star); }
         </div>
       </div>
       <div class="stats">
-        <div class="stat"><b>41</b><span>Total headcount</span></div>
-        <div class="stat"><b>35</b><span>Delivery specialists</span></div>
-        <div class="stat"><b class="tbd">[#]</b><span>Projects</span></div>
+        <div class="stat"><b>39</b><span>Total headcount</span></div>
+        <div class="stat"><b>33</b><span>In delivery</span></div>
+        <div class="stat"><b>7</b><span>Projects</span></div>
       </div>
     </div>
   </div>
 
   <section class="chart">
-    <div class="node center ceo">
+    <div class="node ceo person">
       <div class="initials">OH</div>
-      <span class="role">Chief Executive Officer · Owner</span>
-      <span class="name">Orest Halan</span>
-      <span class="alt">Strategy, finance, company management</span>
+      <div><span class="role">Chief Executive Officer · Owner</span><span class="name">Orest Halan</span><span class="alt">Strategy, finance, company management</span></div>
     </div>
     <div class="stem"></div>
 
     <div class="units">
-      <!-- Delivery -->
       <div class="unit">
         <span class="label">Delivery</span>
-        <div class="node center cdo">
+        <div class="node cdo person">
           <div class="initials">SK</div>
-          <span class="role">Deputy CEO · Chief Delivery Officer</span>
-          <span class="name">Serhii Kovalchuk</span>
-          <span class="alt">All client projects and delivery teams</span>
+          <div><span class="role">Deputy CEO · Chief Delivery Officer</span><span class="name">Serhii Kovalchuk</span><span class="alt">All client projects and delivery teams</span></div>
         </div>
         <div class="stem"></div>
-        <div class="projects" id="projects"></div>
-        <div class="pool">
-          <div class="dots" id="dots" aria-hidden="true"></div>
-          <div class="txt"><b>35 specialists in Delivery</b><span>Team leads and team members across all projects</span></div>
+        <div class="plist" id="plist">
+          <div class="prow hd"><span>Project</span><span>Team lead</span><span>Team</span><span>Stack</span></div>
         </div>
       </div>
 
-      <!-- Sales -->
       <div class="unit">
         <span class="label">Sales</span>
-        <div class="node dept">
-          <div class="initials q">?</div>
-          <span class="role">Sales Lead</span>
-          <span class="name"><i class="tbd">[Name Surname]</i></span>
-          <span class="alt">New business, client relationships, pipeline</span>
+        <div class="node dept person">
+          <div class="initials">DC</div>
+          <div><span class="role">Sales Lead</span><span class="name">Dmytro Cherkasov</span><span class="alt">New business, client relationships</span></div>
         </div>
       </div>
 
-      <!-- HR -->
       <div class="unit">
         <span class="label">HR</span>
-        <div class="node dept">
-          <div class="initials q">?</div>
-          <span class="role">HR Lead</span>
-          <span class="name"><i class="tbd">[Name Surname]</i></span>
-          <span class="alt">Recruitment, onboarding, people operations</span>
+        <div class="node dept person">
+          <div class="initials">TL</div>
+          <div><span class="role">HR Lead</span><span class="name">Tetiana Lavruk</span><span class="alt">Recruitment, people operations</span></div>
         </div>
         <div class="subline"></div>
-        <div class="node dept" style="border-top-width: 1px">
-          <span class="role">HR</span>
-          <span class="name"><i class="tbd">[Name Surname]</i></span>
+        <div class="node dept person" style="border-top-width: 1px">
+          <div class="initials">AR</div>
+          <div><span class="role">HR</span><span class="name">Alina Romankiv</span></div>
         </div>
       </div>
 
-      <!-- Legal -->
       <div class="unit">
         <span class="label">Legal</span>
-        <div class="node dept">
-          <div class="initials q">?</div>
-          <span class="role">Chief Legal Officer</span>
-          <span class="name"><i class="tbd">[Name Surname]</i></span>
-          <span class="alt">Contracts, compliance, corporate matters</span>
+        <div class="node dept person">
+          <div class="initials">SB</div>
+          <div><span class="role">Chief Legal Officer</span><span class="name">Serhii Barinov</span><span class="alt">Contracts, compliance, corporate matters</span></div>
         </div>
       </div>
     </div>
@@ -217,43 +226,50 @@ h1 .mark { color: var(--star); }
       <h3>Company</h3>
       <div><span>Website</span><b><a href="https://stellars.tech">https://stellars.tech</a></b></div>
       <div><span>Registered address</span><b>16192 Coastal Highway, Lewes, Delaware 19958, County of Sussex, USA</b></div>
-      <div><span>Team</span><b>41 specialists</b></div>
+      <div><span>Team</span><b>39 people · 7 projects</b></div>
     </div>
     <div>
       <h3>Services</h3>
       <ul class="services">
-        <li><b>IT strategy consulting</b><span>Technology audits, product discovery, architecture and roadmaps.</span></li>
-        <li><b>FinTech &amp; payments</b><span>Payment processing, digital wallets, transaction systems.</span></li>
-        <li><b>Custom software development</b><span>Full-cycle backend and business applications, from MVP to scale.</span></li>
-        <li><b>Blockchain integration</b><span>Blockchain networks and crypto payments in existing products.</span></li>
-        <li><b>Web development</b><span>Web platforms, client portals and SaaS products.</span></li>
-        <li><b>AI-driven solutions</b><span>Machine learning and AI features in client products.</span></li>
-        <li><b>Enterprise systems &amp; modernization</b><span>Legacy modernization and enterprise integrations.</span></li>
+        <li><b>Consulting</b><span>Technology strategy, discovery and delivery roadmaps.</span></li>
+        <li><b>Product Design</b><span>User-centric UI/UX design for web and mobile products.</span></li>
+        <li><b>Software Development</b><span>End-to-end custom software, from MVP to scale.</span></li>
+        <li><b>Dedicated Teams</b><span>Engineering teams that work as an extension of the client's team.</span></li>
+        <li><b>Digital Transformation</b><span>Modernizing business operations with digital technologies.</span></li>
+        <li><b>DevOps</b><span>Automation for faster, more reliable software delivery.</span></li>
+        <li><b>AI Development</b><span>AI-powered software for decision-making and process automation.</span></li>
+        <li><b>Domain focus: FinTech</b><span>Payments, digital wallets and financial platforms.</span></li>
       </ul>
     </div>
     <div class="legend">
-      <div><span><i class="dot" style="background: var(--star)"></i>Owner / CEO, departments</span><span><i class="dot" style="background: var(--accent)"></i>Delivery</span><span><i class="tbd">[ ]</i> To be confirmed</span></div>
+      <div><span><i class="dot" style="background: var(--star)"></i>CEO and departments</span><span><i class="dot" style="background: var(--accent)"></i>Delivery</span></div>
       <span>stellars.tech · Sep 2026</span>
     </div>
   </footer>
 </div>
 </div>
 <script>
-  const projects = document.getElementById('projects');
-  for (let i = 1; i <= 4; i++) {
-    projects.insertAdjacentHTML('beforeend',
-      '<div class="node project">' +
-        '<div class="p-head"><span class="name"><i class="tbd">[Project ' + i + ']</i></span><small>Project</small></div>' +
-        '<div class="p-body">' +
-          '<div class="tl"><div class="initials q">?</div><div><span class="role">Team Lead</span><span class="name"><i class="tbd">[Name Surname]</i></span></div></div>' +
-          '<div class="team"><div class="team-row"><span>Team</span><span><b class="tbd">[#]</b> specialists</span></div>' +
-          '<div class="seats"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>' +
-          '<dl class="meta"><dt>Domain</dt><dd><i class="tbd">[e.g. FinTech]</i></dd><dt>Stack</dt><dd><i class="tbd">[e.g. Node.js]</i></dd></dl>' +
-        '</div>' +
-      '</div>');
+  const P = [
+    ['ClassKid', 'Mykhailo Sich', 9, ['React', 'Java']],
+    ['EPD', 'Artur Formanchuk', 11, ['React', 'Node.js']],
+    ['ScoreAI', 'Roman Sydor', 3, ['React', 'Node.js']],
+    ['InsurGrid / Maroo', 'Olen Sabat', 2, ['React', 'Node.js']],
+    ['Addesu', 'Yevhenii Bednrachuk', 3, ['React', '.NET']],
+    ['Vakari', 'Roman Kuchera', 4, ['React', 'Python']],
+    ['MMA', 'Roman Sydor', 1, ['.NET']],
+  ];
+  const ini = n => n.split(' ').map(w => w[0]).join('');
+  const list = document.getElementById('plist');
+  let total = 0;
+  for (const [name, lead, n, stack] of P) {
+    total += n;
+    list.insertAdjacentHTML('beforeend',
+      '<div class="prow"><span class="pname">' + name + '</span>' +
+      '<span class="lead"><span class="initials">' + ini(lead) + '</span><span>' + lead + '<small>Team Lead</small></span></span>' +
+      '<span class="size"><b>' + n + '</b><span class="d">' + '<i></i>'.repeat(n) + '</span></span>' +
+      '<span class="stack-chips">' + stack.map(t => '<span>' + t + '</span>').join('') + '</span></div>');
   }
-  const d = document.getElementById('dots');
-  for (let i = 0; i < 35; i++) d.appendChild(document.createElement('i'));
+  list.insertAdjacentHTML('beforeend', '<div class="prow tot"><span class="pname">Total in delivery</span><span></span><span class="size"><b>' + total + '</b><span class="alt" style="font-weight:500">people across 7 projects</span></span><span></span></div>');
   const c = document.getElementById('stars'), x = c.getContext('2d');
   let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
   for (let i = 0; i < 160; i++) {
