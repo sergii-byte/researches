@@ -222,8 +222,8 @@ h1 .mark { color: var(--star); }
 .sub .name { font-size: 15px; }
 
 /* Delivery subtree */
-.delivery-split { display: grid; grid-template-columns: 220px 1fr; gap: 20px; width: 100%; position: relative; padding-top: 22px; }
-.delivery-split::before { content: ""; position: absolute; top: 0; height: 1px; background: var(--line); left: 110px; right: calc((100% - 240px) / 2); }
+.delivery-split { display: grid; grid-template-columns: 1fr; gap: 20px; width: 100%; position: relative; padding-top: 22px; }
+.delivery-split::before { display: none; content: ""; position: absolute; top: 0; height: 1px; background: var(--line); left: 110px; right: calc((100% - 240px) / 2); }
 .col { display: flex; flex-direction: column; position: relative; min-width: 0; }
 .col::before { content: ""; position: absolute; top: -22px; left: 50%; width: 1px; height: 22px; background: var(--line); }
 .col > .label { align-self: center; }
@@ -320,21 +320,11 @@ h1 .mark { color: var(--star); }
             <div class="initials">SK</div>
             <span class="role">Deputy CEO · Chief Delivery Officer</span>
             <span class="name">Serhii Kovalchuk</span>
-            <span class="alt">Projects, team leads, engineering delivery</span>
+            <span class="alt">Projects and engineering delivery</span>
           </div>
           <div class="stem"></div>
 
           <div class="delivery-split">
-            <div class="col">
-              <span class="label">Team leads</span>
-              <div class="list">
-                <div class="node tl"><div class="initials q">?</div><div><span class="name"><i class="tbd">[Name Surname]</i></span><br><span class="alt">Team Lead · <i class="tbd">[Backend]</i></span></div></div>
-                <div class="node tl"><div class="initials q">?</div><div><span class="name"><i class="tbd">[Name Surname]</i></span><br><span class="alt">Team Lead · <i class="tbd">[Frontend]</i></span></div></div>
-                <div class="node tl"><div class="initials q">?</div><div><span class="name"><i class="tbd">[Name Surname]</i></span><br><span class="alt">Team Lead · <i class="tbd">[Mobile]</i></span></div></div>
-                <div class="node tl"><div class="initials q">?</div><div><span class="name"><i class="tbd">[Name Surname]</i></span><br><span class="alt">Team Lead · <i class="tbd">[QA]</i></span></div></div>
-              </div>
-            </div>
-
             <div class="col">
               <span class="label">Projects</span>
               <div class="projects" id="projects"></div>
