@@ -171,6 +171,11 @@ h1 .mark { color: var(--star); }
 .pcard.bench .pc-team .d i { background: transparent; border: 1.5px dashed var(--accent); opacity: 1; }
 .dtotal { margin-top: 12px; width: 100%; display: flex; justify-content: center; gap: 22px; font-size: 12.5px; color: var(--muted); }
 .dtotal b { color: var(--ink); font-family: var(--font-display); }
+
+/* Department container blocks */
+.dbox { width: 100%; background: #e9edf5; border: 1px solid var(--line); border-top: 3px solid var(--star); border-radius: 12px; padding: 8px; display: flex; flex-direction: column; gap: 8px; }
+.dbox-h { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); font-weight: 500; text-align: center; padding: 2px 0 2px; }
+.dbox .dept { border-top: 1px solid var(--line); padding: 10px 12px; }
 </style>
 </head>
 <body>
@@ -214,31 +219,33 @@ h1 .mark { color: var(--star); }
       </div>
 
       <div class="unit">
-        <span class="label">Sales</span>
-        <div class="node dept person">
-          <div class="initials">DC</div>
-          <div><span class="role">Sales Lead</span><span class="name">Dmytro Cherkasov</span><span class="alt">New business, client relationships</span></div>
+        <div class="dbox">
+          <div class="dbox-h">Sales Department</div>
+          <div class="node dept person">
+            <div class="initials">DC</div>
+            <div><span class="role">Sales Lead</span><span class="name">Dmytro Cherkasov</span><span class="alt">New business, client relationships</span></div>
+          </div>
         </div>
       </div>
-
       <div class="unit">
-        <span class="label">HR</span>
-        <div class="node dept person">
-          <div class="initials">TL</div>
-          <div><span class="role">HR Lead</span><span class="name">Tetiana Lavruk</span><span class="alt">Recruitment, people operations</span></div>
-        </div>
-        <div class="subline"></div>
-        <div class="node dept person" style="border-top-width: 1px">
-          <div class="initials">AR</div>
-          <div><span class="role">HR</span><span class="name">Alina Romankiv</span></div>
+        <div class="dbox">
+          <div class="dbox-h">HR Department</div>
+          <div class="node dept person">
+            <div class="initials">TL</div>
+            <div><span class="role">HR Lead</span><span class="name">Tetiana Lavruk</span><span class="alt">People operations, onboarding, retention</span></div>
+          </div><div class="node dept person">
+            <div class="initials">AR</div>
+            <div><span class="role">Recruitment Lead</span><span class="name">Alina Romankiv</span><span class="alt">Hiring and talent sourcing</span></div>
+          </div>
         </div>
       </div>
-
       <div class="unit">
-        <span class="label">Legal</span>
-        <div class="node dept person">
-          <div class="initials">SB</div>
-          <div><span class="role">Chief Legal Officer</span><span class="name">Serhii Barinov</span><span class="alt">Contracts, compliance, corporate matters</span></div>
+        <div class="dbox">
+          <div class="dbox-h">Legal Department</div>
+          <div class="node dept person">
+            <div class="initials">SB</div>
+            <div><span class="role">Chief Legal Officer</span><span class="name">Serhii Barinov</span><span class="alt">Contracts, compliance, corporate matters</span></div>
+          </div>
         </div>
       </div>
     </div>
